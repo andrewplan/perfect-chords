@@ -1,0 +1,163 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-nav-bar {
+  padding: 0 2em;
+  display: flex;
+  justify-content: space-between;
+  background-color: #5CA7D8;
+
+}
+
+.top-nav-bar h1 {
+  /*color: #5CA7D8*/
+  /*color: white;*/
+  letter-spacing: 1px;
+}
+
+.top-nav-bar-perfect-heading-text {
+  color: white;
+}
+
+.home-page-wrapper {
+  min-height: 40em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://hd.unsplash.com/photo-1444623151656-030273ddb785');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-page-content-wrapper h2{
+  color: white;
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.home-page-get-started-button {
+  width: 10em;
+  height: 3em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #E06135;*/
+  border: 5px solid #5CA7D8;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+}
+
+
+
+.cp-results-wrapper {
+  height: 40em;
+  padding: 0 5em;
+  overflow: scroll;
+}
+
+.cp-result-display-bar-wrapper {
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.cp-result-plus-icon-wrapper {
+  height: 2em;
+  width: 2em;
+}
+
+.cp-result-plus-icon {
+  height: 2em;
+  width: 2em;
+}
+
+.cp-result-text-wrapper {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.cp-result-dropdown-box-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  overflow: scroll;
+}
+
+.cp-result-examples-list-wrapper {
+  display: inline-block;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.cp-result-examples-list-wrapper a {
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.cp-result-example-wrapper {
+  padding: 0.3em;
+  border-bottom: 1px solid black;
+}
+
+iframe {
+  height: 60vh;
+  width: 60vh;
+}
+
+.save-song-structure-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-builder-master-wrapper {
+  height: 40em;
+  padding: 0 5em;
+  overflow: scroll;
+}
+
+.song-builder-drag-and-drop-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.song-builder-section-wrapper {
+  width: 15em;
+  height: 15em;
+  border: 2px solid gainsboro;
+  text-align: center;
+}
+
+.bottom-nav-bar {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-nav-bar a {
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.bottom-nav-bar a:visited {
+  color: #5CA7D8;
+}
+
+
+.bottom-nav-bar p {
+  margin: 0;
+}

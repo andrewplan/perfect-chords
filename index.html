@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  ng-app="perfectChordsApp"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Perfect Chords</title>
+</head>
+
+<body ng-controller="mainCtrl">
+
+  <ui-view></ui-view>
+
+  <nav class="bottom-nav-bar">
+    <a ui-sref="cp-results">Results</a>
+    <a ui-sref="home-page">My Songs</a>
+    <a ui-sref="song-builder">Song Builder</a>
+    <p class="hooktheory-credit-wrapper">Data from <a href="http://hooktheory.com">Hooktheory</a> API</p>
+  </nav>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+  <script src="./app.js" charset="utf-8"></script>
+  <script src="./mainCtrl.js" charset="utf-8"></script>
+  <script src="./features/cp-results/cpResultsCtrl.js" charset="utf-8"></script>
+  <script src="./features/home-page/homePageCtrl.js" charset="utf-8"></script>
+  <script src="./features/song-builder/songBuilderCtrl.js" charset="utf-8"></script>
+  <script src="./services/userService.js" charset="utf-8"></script>
+  <script src="./services/resultsService.js" charset="utf-8"></script>
+</body>
+</html>

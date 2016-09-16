@@ -1,0 +1,94 @@
+<nav class=top-nav-bar>
+  <h1 ui-sref="home-page">
+    <span class="top-nav-bar-perfect-heading-text">
+      PERFECT
+    </span>
+    CHORDS
+  </h1>
+</nav>
+
+<main class="cp-results-wrapper">
+
+  <h2>Select a chord progression to hear real-world examples.</h2>
+  <!-- <h2>***{{ results }}***</h2> -->
+
+  <!-- start of result master wrapper -->
+  <div
+    class="cp-result-master-wrapper"
+  >
+    <div class="cp-result-display-bar-wrapper">
+      <div class="cp-results-plus-icon-wrapper">
+        <img class="cp-result-plus-icon" src="./features/cp-results/plus-icon.png" alt="" >
+      </div>
+
+      <div class="cp-result-text-wrapper">
+        <h3
+          ng-init="isDropdownBoxActive = false"
+          ng-click="isDropdownBoxActive=!isDropdownBoxActive"
+        >
+          I • V • VI • IV
+        </h3>
+      </div>
+    </div>
+
+    <div
+      class="cp-result-dropdown-box-wrapper"
+      ng-show="isDropdownBoxActive"
+    >
+
+      <div class="cp-result-examples-list-wrapper">
+        <div
+          class="cp-result-example-wrapper"
+          ng-repeat="result in results1564"
+        >
+            <div><a href="{{result.url}}" target="hooktheory-website-wrapper">{{result.artist}}, {{result.song}} ({{result.section}})</a></div>
+        </div>
+      </div>
+
+      <iframe class="hooktheory-website-wrapper" name="hooktheory-website-wrapper" frameborder="0">
+      </iframe>
+
+    </div>
+  </div>
+
+  <!-- start of result master wrapper -->
+  <div
+    class="cp-result-master-wrapper"
+  >
+    <div class="cp-result-display-bar-wrapper">
+      <div class="cp-results-plus-icon-wrapper">
+        <img class="cp-result-plus-icon" src="./features/cp-results/plus-icon.png" alt="" >
+      </div>
+
+      <div class="cp-result-text-wrapper">
+        <h3
+          ng-init="isDropdownBox2Active = false"
+          ng-click="isDropdownBox2Active=!isDropdownBox2Active"
+        >
+          I • II • IV • V
+        </h3>
+      </div>
+    </div>
+
+    <div
+      class="cp-result-dropdown-box-wrapper"
+      ng-show="isDropdownBox2Active"
+    >
+
+      <div class="cp-result-examples-list-wrapper">
+        <div
+          class="cp-result-example-wrapper"
+          ng-repeat="result in results1245"
+        >
+            <div><a href="{{result.url}}" target="hooktheory-website-wrapper2">{{result.artist}}, {{result.song}} ({{result.section}})</a></div>
+        </div>
+      </div>
+
+      <iframe class="hooktheory-website-wrapper" name="hooktheory-website-wrapper2" frameborder="0">
+      </iframe>
+
+    </div>
+  </div>
+
+
+</main>
