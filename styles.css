@@ -59,7 +59,7 @@ body {
 
 
 
-.cp-results-wrapper {
+.cp-all-results-wrapper {
   height: 40em;
   padding: 0 5em;
   overflow: scroll;
@@ -111,7 +111,7 @@ body {
   border-bottom: 1px solid black;
 }
 
-iframe {
+.hooktheory-website-wrapper, iframe {
   height: 60vh;
   width: 60vh;
 }

@@ -1,0 +1,38 @@
+<div
+  class="cp-result-master-wrapper"
+>
+  <div class="cp-result-display-bar-wrapper">
+    <div class="cp-results-plus-icon-wrapper">
+      <img class="cp-result-plus-icon" src="./features/cp-results/plus-icon.png" alt="" >
+    </div>
+
+    <div class="cp-result-text-wrapper">
+      <h3
+        ng-click="getSongExamples( chordProg.progression, $event ); toggleDropdownBox()"
+      >
+        {{ chordProg.progression }}
+      </h3>
+    </div>
+  </div>
+
+  <div
+    class="cp-result-dropdown-box-wrapper"
+    ng-show="isDropdownBoxActive"
+  >
+
+    <div class="cp-result-examples-list-wrapper">
+
+      <cp-example
+        class="cp-result-example-wrapper"
+        ng-repeat="result in results"
+        result="result"
+      >
+      </cp-example>
+
+    </div>
+
+    <section class="hooktheory-website-wrapper">
+    </section>
+
+  </div>
+</div>
