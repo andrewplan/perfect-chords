@@ -99,6 +99,7 @@ body {
 .cp-result-examples-list-wrapper {
   display: inline-block;
   height: 60vh;
+  width: 25em;
   overflow-y: scroll;
 }
 
