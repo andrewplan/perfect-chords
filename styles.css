@@ -31,7 +31,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://hd.unsplash.com/photo-1444623151656-030273ddb785');
+  background-image: url('https://hd.unsplash.com/photo-1471523835123-1172efe5eaa1');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -45,18 +45,17 @@ body {
 }
 
 .home-page-get-started-button {
-  width: 10em;
+  width: 12em;
   height: 3em;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: #E06135;*/
-  border: 5px solid #5CA7D8;
+  background-color: #D72B2F;
+  /*border: 5px solid #5CA7D8;*/
   color: white;
   font-size: 24px;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 2px black;
+  /*text-shadow: 2px 2px 2px black;*/
   text-align: center;
 }
 
@@ -143,21 +142,28 @@ iframe {
 }
 
 .bottom-nav-bar {
-  margin-top: 1em;
+  height: 100%;
+  padding-top: 1em;
   display: flex;
   justify-content: space-around;
+  /*background-color: #FFA22C;*/
 }
 
-.bottom-nav-bar a {
+.bottom-nav-bar-results-link,
+.bottom-nav-bar-my-songs-link,
+.bottom-nav-bar-song-builder-link
+{
   text-decoration: none;
   letter-spacing: 2px;
-}
-
-.bottom-nav-bar a:visited {
   color: #5CA7D8;
 }
 
-
 .bottom-nav-bar p {
   margin: 0;
+}
+
+.hooktheory-link, .hooktheory-link:visited  {
+  letter-spacing: 2px;
+  color: #FFA22C;
+  text-decoration: none;
 }

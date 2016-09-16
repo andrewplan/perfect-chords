@@ -16,10 +16,34 @@
   <ui-view></ui-view>
 
   <nav class="bottom-nav-bar">
-    <a ui-sref="cp-results">Results</a>
-    <a ui-sref="home-page">My Songs</a>
-    <a ui-sref="song-builder">Song Builder</a>
-    <p class="hooktheory-credit-wrapper">Data from <a href="http://hooktheory.com">Hooktheory</a> API</p>
+    <a
+      ui-sref="cp-results"
+      class="bottom-nav-bar-results-link"
+    >
+      Results
+    </a>
+    <a
+      ui-sref="home-page"
+      class="bottom-nav-bar-my-songs-link"
+    >
+      My Songs
+    </a>
+    <a
+      ui-sref="song-builder"
+      class="bottom-nav-bar-song-builder-link"
+    >
+      Song Builder
+    </a>
+    <p class="hooktheory-credit-wrapper">
+      Data from
+      <a
+        href="http://hooktheory.com"
+        class="hooktheory-link"
+      >
+        Hooktheory
+      </a>
+      API
+    </p>
   </nav>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
