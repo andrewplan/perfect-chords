@@ -1,14 +1,31 @@
 angular.module( 'perfectChordsApp' )
     .controller( 'cpResultCtrl', function( $scope, resultsService, userService ) {
         $scope.isDropdownBoxActive = false;
+        $scope.pageNumber = 2;
+        $scope.isPreviousExamplesButtonActive = false;
 
-        $scope.getSongExamples = function( chordProg, $event ) {
+        $scope.getSongExamples = function( chordProg, $event, pageNumber ) {
           $event.preventDefault();
           resultsService
-            .getSongExamples( chordProg )
+            .getSongExamples( chordProg, pageNumber )
             .then( function( results ) {
                 $scope.examples = results;
-                console.log( $scope.examples );
+                $scope.pageNumber++;
+            } );
+        };
+
+        $scope.getPreviousSongExamples = function( chordProg, $event, pageNumber ) {
+          $event.preventDefault();
+          if ( $scope.pageNumber >= 2 ) {
+            $scope.pageNumber--;
+          }
+          else {
+            $scope.isPreviousExamplesButtonActive = false;
+          }
+          resultsService
+            .getSongExamples( chordProg, pageNumber )
+            .then( function( results ) {
+                $scope.examples = results;
             } );
         };
 

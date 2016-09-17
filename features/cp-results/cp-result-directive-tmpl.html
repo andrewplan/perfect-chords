@@ -32,6 +32,26 @@
       >
       </cp-example>
 
+      <div
+        class="cp-result-examples-list-wrapper-load-more"
+      >
+        <p
+          ng-click="getSongExamples( chordProg.progression, $event, pageNumber ); isPreviousExamplesButtonActive = true"
+        >
+          Show more examples
+        </p>
+      </div>
+      <div
+        class="cp-result-examples-list-wrapper-load-more"
+      >
+        <p
+          ng-click="getPreviousSongExamples( chordProg.progression, $event, pageNumber )"
+          ng-show="isPreviousExamplesButtonActive"
+        >
+          Show previous examples
+        </p>
+      </div>
+
     </div>
 
     <section class="hooktheory-website-wrapper">

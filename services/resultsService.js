@@ -4,10 +4,28 @@ angular.module( 'perfectChordsApp' )
         var baseUrl = 'https://api.hooktheory.com/v1/';
 
         /***** code to hook into Hooktheory API *****/
-        this.getSongExamples = function( chordProg ) {
+        this.getSongExamples = function( chordProg, pageNumber ) {
 
-            var promise =
-                $http(
+          if ( pageNumber ) {
+            return $http(
+                    {
+                    'url': baseUrl + 'trends/songs?cp=' + chordProg + '&page=' + pageNumber
+                    , 'method': "GET"
+                    , 'headers': {
+                      "authorization": "Bearer 242d9571482d3a77b8f00efb38f9cf50"
+                      , "accept": "application/json"
+                      , "content-type": "application/json"
+                    }
+                  }
+                ).then( function( response ) {
+                    if ( response.status === 200 ) {
+                      console.log( "pageNumber exists, equals " + pageNumber  + response );
+                      return response.data;
+                    }
+                    console.log( 'Error: ' + response.error );
+                } );
+            }
+            return $http(
                     {
                     'url': baseUrl + 'trends/songs?cp=' + chordProg
                     , 'method': "GET"
@@ -19,16 +37,35 @@ angular.module( 'perfectChordsApp' )
                   }
                 ).then( function( response ) {
                     if ( response.status === 200 ) {
+                      console.log( "No pageNumber. " + response.data );
                       return response.data;
                     }
                     console.log( 'Error: ' + response.error );
                 } );
-            return promise;
+
         };
+
+        /**********************************/
+
+        // var nextPage = ''; //stores the url of the next page
+        //
+        // this.getCharacters = function() {
+        //   if ( nextPage ) {
+        //     return $http.get( nextPage ).then( saveNextPage );
+        //   }
+        //   return $http.get( baseUrl + 'people' ).then( saveNextPage ); // returns a promise
+        // };
+        //
+        // function saveNextPage( result ) {
+        //     nextPage = result.data.next;
+        //     return result; // need to return the promise so we can continue promise chaining in our controller
+        // };
+
+        /**********************************/
 
         this.getChordProgDatabase = function() {
           return this.chordProgDatabase;
-        }
+        };
 
         this.chordProgDatabase = [
           {
