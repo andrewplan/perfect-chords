@@ -2,8 +2,11 @@
   class="cp-result-master-wrapper"
 >
   <div class="cp-result-display-bar-wrapper">
-    <div class="cp-results-plus-icon-wrapper">
-      <img class="cp-result-plus-icon" src="./features/cp-results/plus-icon.png" alt="" >
+    <div
+      class="cp-results-plus-text-wrapper"
+      ng-click="addProgToFavorites( chordProg, $event )"
+    >
+      <span class="cp-result-plus-text">+</span>
     </div>
 
     <div class="cp-result-text-wrapper">
@@ -24,8 +27,8 @@
 
       <cp-example
         class="cp-result-example-wrapper"
-        ng-repeat="result in results"
-        result="result"
+        ng-repeat="example in examples"
+        example="example"
       >
       </cp-example>
 

@@ -1,0 +1,33 @@
+<div
+  class="song-builder-example-wrapper"
+>
+  <div class="song-builder-example-display-bar-wrapper">
+    <div
+      class="song-builder-example-delete-wrapper"
+      ng-click="removeExampleFromFavorites( example, $event )"
+    >
+      <span class="song-builder-example-delete-text">x</span>
+    </div>
+
+    <div
+      class="song-builder-example-song-info"
+      ng-click="toggleDropdownBox()"
+    >
+      <p class="song-builder-example-song-info-progression">{{ example.progression }}</p>
+      <p class="song-builder-example-song-info-artist">{{ example.artist }}</p>
+      <p class="song-builder-example-song-info-song">"{{ example.song }}"</p>
+      <p class="song-builder-example-song-info-section">{{ example.section }}</p>
+    </div>
+  </div>
+
+  <div
+    class="song-builder-example-dropdown-box-wrapper"
+    ng-show="isDropdownBoxActive"
+  >
+
+    <section class="song-builder-example-hooktheory-website-wrapper">
+    </section>
+
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div
+  class="song-builder-prog-master-wrapper"
+>
+  <div class="song-builder-prog-display-bar-wrapper">
+    <div
+      class="song-builder-prog-delete-text-wrapper"
+      ng-click="removeProgFromFavorites( prog, $event )"
+    >
+      <span class="song-builder-prog-delete-text">x</span>
+    </div>
+
+    <div class="song-builder-prog-text-wrapper">
+      <h3
+        ng-click="getSongExamples( prog.progression, $event ); toggleDropdownBox()"
+      >
+        {{ prog.progression }}
+      </h3>
+    </div>
+  </div>
+
+  <div
+    class="song-builder-prog-dropdown-box-wrapper"
+    ng-show="isDropdownBoxActive"
+  >
+
+    <div class="song-builder-prog-examples-list-wrapper">
+
+      <song-builder-prog-example
+        ng-repeat="example in examples"
+        example="example"
+      >
+      </song-builder-prog-example>
+
+    </div>
+
+    <section class="hooktheory-website-wrapper">
+    </section>
+
+  </div>
+</div>

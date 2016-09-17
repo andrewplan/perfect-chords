@@ -1,10 +1,17 @@
 <div
   class="cp-result-example-wrapper"
 >
-    <!-- <a
-      class="cp-result-example-link"
-      href="{{ result.url }}"
-    > -->
-      {{ result.artist }}, {{ result.song }} ( {{ result.section }} )
-    <!-- </a> -->
+  <div
+    class="cp-result-example-plus-wrapper"
+    ng-click="addExampleToFavorites( example, progName, $event )"
+  >
+    <span class="cp-result-example-plus-text">+</span>
+  </div>
+
+  <div class="cp-result-example-song-info">
+    <p class="cp-result-example-song-info-artist">{{ example.artist }}</p>
+    <p class="cp-result-example-song-info-song">"{{ example.song }}"</p>
+    <p class="cp-result-example-song-info-section">{{ example.section }}</p>
+  </div>
+
 </div>

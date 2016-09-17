@@ -1,4 +1,5 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'songBuilderCtrl', function( $scope ) {
-
-    } )
+    .controller( 'songBuilderCtrl', function( $scope, userService ) {
+        $scope.progFavorites = userService.getProgFavorites();
+        $scope.exampleFavorites = userService.getExampleFavorites();
+    } );

@@ -1,11 +1,11 @@
 angular.module( 'perfectChordsApp' )
-    .directive( 'cpResult', function() {
+    .directive( 'songBuilderProg', function() {
         return {
-            templateUrl: './features/cp-results/cp-result-directive-tmpl.html'
+            templateUrl: './features/song-builder/song-builder-prog-directive-tmpl.html'
             , restrict: 'EA'
             , replace: true
             , scope: {
-                  chordProg: '='
+                  prog: '='
               }
             , controller: 'cpResultCtrl'
             , link: function( scope, element, attributes ) {

@@ -1,16 +1,24 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'cpResultCtrl', function( $scope, resultsService ) {
-
+    .controller( 'cpResultCtrl', function( $scope, resultsService, userService ) {
         $scope.isDropdownBoxActive = false;
-        /***** code for when Hooktheory API starts working *****/
+
         $scope.getSongExamples = function( chordProg, $event ) {
           $event.preventDefault();
           resultsService
             .getSongExamples( chordProg )
             .then( function( results ) {
-                $scope.results = results;
-                console.log( $scope.results );
+                $scope.examples = results;
+                console.log( $scope.examples );
             } );
         };
 
+        $scope.addProgToFavorites = function( chordProg, $event ) {
+            $event.preventDefault();
+            userService.addProgToFavorites( chordProg );
+        };
+
+        $scope.removeProgFromFavorites = function( chordProg, $event ) {
+            $event.preventDefault();
+            userService.removeProgFromFavorites( chordProg );
+        };
 } );

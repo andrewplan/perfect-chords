@@ -1,0 +1,17 @@
+<div
+  class="song-builder-prog-example-wrapper"
+>
+  <div
+    class="song-builder-prog-example-plus-wrapper"
+    ng-click="addExampleToFavorites( example, progName, $event )"
+  >
+    <span class="song-builder-prog-example-plus-text">+</span>
+  </div>
+
+  <div class="song-builder-prog-example-song-info">
+    <p class="song-builder-prog-example-song-info-artist">{{ example.artist }}</p>
+    <p class="song-builder-prog-example-song-info-song">"{{ example.song }}"</p>
+    <p class="song-builder-prog-example-song-info-section">{{ example.section }}</p>
+  </div>
+
+</div>

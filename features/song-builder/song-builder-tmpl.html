@@ -5,38 +5,72 @@
     </span>
     CHORDS
   </h1>
-  <div class="save-song-structure-button">SAVE</div>
+  <!-- <div class="save-song-structure-button">SAVE</div> -->
 </nav>
 
-<main class="song-builder-master-wrapper">
+<section class="song-builder-master-wrapper">
 
+<!-- <div class="song-builder-drag-and-drop-wrapper">
 
+  <section class="song-builder-section-wrapper">
+    <h4 class="song-builder-verse-heading">Verse</h4>
+  </section>
 
-  <div class="song-builder-drag-and-drop-wrapper">
+  <section class="song-builder-section-wrapper">
+    <h4 class="song-builder-prechorus-heading">Prechorus</h4>
+  </section>
 
-    <section class="song-builder-section-wrapper">
-      <h4 class="song-builder-verse-heading">Verse</h4>
-    </section>
+  <section class="song-builder-section-wrapper">
+    <h4 class="song-builder-chorus-heading">Chorus</h4>
+  </section>
 
-    <section class="song-builder-section-wrapper">
-      <h4 class="song-builder-prechorus-heading">Prechorus</h4>
-    </section>
+  <section class="song-builder-section-wrapper">
+    <h4 class="song-builder-bridge-heading">Bridge</h4>
+  </section>
 
-    <section class="song-builder-section-wrapper">
-      <h4 class="song-builder-chorus-heading">Chorus</h4>
-    </section>
+</div> -->
 
-    <section class="song-builder-section-wrapper">
-      <h4 class="song-builder-bridge-heading">Bridge</h4>
-    </section>
+  <section class="song-builder-all-favorites-wrapper">
 
-  </div>
+    <div class="song-builder-favorite-progs-wrapper">
 
-  <div class="cp-favorites-wrapper">
-    <h5 class="cp-favorites-wrapper-heading">FAVORITES</h5>
-    <div class="cp-favorite">
-      <p class="cp-favorite-text">+   I VII VI  </p>
+      <h2 class="song-builder-favorite-progs-wrapper-heading">FAVORITE PROGRESSIONS</h2>
+
+      <song-builder-prog
+        ng-repeat="prog in progFavorites"
+        prog="prog"
+      >
+      </song-builder-prog>
+
+      <!-- <div
+        class="song-builder-favorite-prog"
+        ng-repeat="prog in progFavorites"
+      >
+        <p class="song-builder-favorite-prog-text">{{prog.progression}}</p>
+      </div> -->
+
     </div>
-  </div>
 
-</main>
+    <div class="song-builder-favorite-examples-wrapper">
+
+      <h2 class="song-builder-favorite-examples-wrapper-heading">FAVORITE EXAMPLES</h2>
+
+      <song-builder-example
+        ng-repeat="example in exampleFavorites"
+        example="example"
+      >
+      </song-builder-example>
+
+      <!-- <div
+        class="song-builder-favorite-example"
+        ng-repeat="example in exampleFavorites"
+      >
+        <p class="song-builder-favorite-example-text">{{example.song}}</p>
+      </div> -->
+
+    </div>
+
+  </section>
+
+
+</section>

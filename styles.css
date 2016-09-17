@@ -50,7 +50,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #D72B2F;
-  /*border: 5px solid #5CA7D8;*/
   color: white;
   font-size: 24px;
   /*text-shadow: 2px 2px 2px black;*/
@@ -71,19 +70,28 @@ body {
   align-items: center;
 }
 
-.cp-result-plus-icon-wrapper {
+.cp-result-plus-text-wrapper {
   height: 2em;
   width: 2em;
 }
 
-.cp-result-plus-icon {
-  height: 2em;
-  width: 2em;
+.cp-result-plus-text:hover {
+  color: #FFA22C;
+  cursor: pointer;
+}
+
+.cp-result-plus-text {
+  font-size: 2em;
 }
 
 .cp-result-text-wrapper {
   display: inline-block;
   margin: 0 auto;
+}
+
+.cp-result-text-wrapper:hover {
+  color: #5CA7D8;
+  cursor: pointer;
 }
 
 .cp-result-dropdown-box-wrapper {
@@ -98,7 +106,7 @@ body {
   display: inline-block;
   height: 60vh;
   width: 25em;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 .cp-result-examples-list-wrapper a {
@@ -107,8 +115,52 @@ body {
 }
 
 .cp-result-example-wrapper {
-  padding: 0.3em;
+  padding: 0.5em;
   border-bottom: 1px solid black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cp-result-example-wrapper:hover {
+  background-color: rgb(242, 242, 242);
+  cursor: pointer;
+}
+
+.cp-result-example-plus-wrapper {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.cp-result-example-plus-text {
+  font-size: 1.5em;
+  color: lightgrey;
+}
+
+.cp-result-example-plus-text:hover {
+  color: #FFA22C;
+  cursor: pointer;
+}
+
+.cp-result-example-song-info {
+  margin-left: 0.3em;
+  font-size: 0.9em;
+  overflow: scroll;
+}
+
+.cp-result-example-song-info-artist,
+.cp-result-example-song-info-song,
+.cp-result-example-song-info-section {
+  margin: 0;
+  padding: 0;
+}
+
+.cp-result-example-song-info-song {
+  color: #5CA7D8;
+}
+
+.cp-result-example-song-info-section {
+  color: rgb(68,68,68);
 }
 
 .hooktheory-website-wrapper, iframe {
@@ -138,6 +190,175 @@ body {
   height: 15em;
   border: 2px solid gainsboro;
   text-align: center;
+}
+
+.song-builder-all-results-wrapper {
+  height: 40em;
+  padding: 0 5em;
+  overflow: scroll;
+}
+
+.song-builder-prog-display-bar-wrapper {
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.song-builder-prog-delete-text-wrapper {
+  height: 2em;
+  width: 2em;
+}
+
+.song-builder-prog-delete-text {
+  font-size: 1.6em;
+}
+
+.song-builder-prog-delete-text:hover {
+  color: #D72B2F;
+  cursor: pointer;
+}
+
+.song-builder-prog-text-wrapper {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.song-builder-prog-text-wrapper:hover {
+  color: #5CA7D8;
+  cursor: pointer;
+}
+
+.song-builder-prog-dropdown-box-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  overflow: scroll;
+}
+
+.song-builder-prog-examples-list-wrapper {
+  display: inline-block;
+  height: 60vh;
+  width: 25em;
+  overflow: scroll;
+}
+
+.song-builder-prog-examples-list-wrapper a {
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.song-builder-prog-example-wrapper {
+  padding: 0.5em;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.song-builder-prog-example-wrapper:hover {
+  background-color: rgb(242, 242, 242);
+  cursor: pointer;
+}
+
+.song-builder-prog-example-plus-wrapper {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.song-builder-prog-example-plus-text {
+  font-size: 1.5em;
+  color: lightgrey;
+}
+
+.song-builder-prog-example-plus-text:hover {
+  color: #FFA22C;
+  cursor: pointer;
+}
+
+.song-builder-prog-example-song-info {
+  margin-left: 0.3em;
+  font-size: 0.9em;
+  overflow: scroll;
+}
+
+.song-builder-prog-example-song-info-artist,
+.song-builder-prog-example-song-info-song,
+.song-builder-prog-example-song-info-section {
+  margin: 0;
+  padding: 0;
+}
+
+.song-builder-prog-example-song-info-song {
+  color: #5CA7D8;
+}
+
+.song-builder-prog-example-song-info-section {
+  color: rgb(68,68,68);
+}
+
+.song-builder-example-wrapper {
+  padding: 0.5em;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: inline-block;
+}
+
+.song-builder-example-display-bar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.song-builder-example-wrapper:hover {
+  background-color: rgb(242, 242, 242);
+  cursor: pointer;
+}
+
+.song-builder-example-delete-wrapper {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.song-builder-example-delete-text {
+  font-size: 1.5em;
+  color: lightgrey;
+}
+
+.song-builder-example-delete-text:hover {
+  color: #D72B2F;
+  cursor: pointer;
+}
+
+.song-builder-example-song-info {
+  margin-left: 0.3em;
+  font-size: 1em;
+  overflow: scroll;
+}
+
+.song-builder-example-song-info-artist,
+.song-builder-example-song-info-song,
+.song-builder-example-song-info-section {
+  margin: 0 0 0.2em 0;
+  padding: 0;
+}
+
+.song-builder-example-song-info-song {
+  color: #5CA7D8;
+}
+
+.song-builder-example-song-info-section {
+  color: rgb(68,68,68);
+}
+
+.song-builder-example-hooktheory-website-wrapper {
+  width: 100%;
+  padding-top: 1em;
+  display: block;
+}
+
+.song-builder-example-hooktheory-website-wrapper iframe {
+  margin: 0 auto;
+  width: 100%;
 }
 
 .bottom-nav-bar {

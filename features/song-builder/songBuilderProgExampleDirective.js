@@ -1,16 +1,15 @@
 angular.module( 'perfectChordsApp' )
-    .directive( 'cpExample', function() {
+    .directive( 'songBuilderProgExample', function() {
         return {
-            templateUrl: './features/cp-results/cp-example-directive-tmpl.html'
+            templateUrl: './features/song-builder/song-builder-prog-example-directive-tmpl.html'
             , restrict: 'EA'
-            , require: '^cpResult'
+            , require: '^songBuilderProgExample'
             , replace: true
             , scope: {
                   example: '='
               }
             , controller: function( $scope, userService ) {
                   $scope.addExampleToFavorites = function( example, progName, $event ) {
-                      $event.preventDefault();
                       userService.addExampleToFavorites(
                         {
                           'song': example.song
@@ -25,7 +24,7 @@ angular.module( 'perfectChordsApp' )
             , link: function( scope, elem, attr ) {
                   scope.progName = elem.parent().parent().parent().find( 'h3' ).text().replace(' ', '');
 
-                  scope.songInfo = angular.element( elem[ 0 ].querySelector( '.cp-result-example-song-info' ) );
+                  scope.songInfo = angular.element( elem[ 0 ].querySelector( '.song-builder-prog-example-song-info' ) );
 
                   scope.songInfo.on( 'click', function() {
                       elem.parent().parent().find( 'section' ).html(
