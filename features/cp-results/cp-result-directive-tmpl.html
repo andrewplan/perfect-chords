@@ -9,7 +9,10 @@
       <span class="cp-result-plus-text">+</span>
     </div>
 
-    <div class="cp-result-text-wrapper">
+    <div
+      id="cp-result-text-wrapper-anchor-point"
+      class="cp-result-text-wrapper"
+    >
       <h3
         ng-click="getSongExamples( chordProg.progression, $event ); toggleDropdownBox()"
       >
@@ -23,8 +26,11 @@
     ng-show="isDropdownBoxActive"
   >
 
-    <div class="cp-result-examples-list-wrapper">
-
+    <div
+      class="cp-result-examples-list-wrapper"
+    >
+      <span>
+      </span>
       <cp-example
         class="cp-result-example-wrapper"
         ng-repeat="example in examples"
@@ -33,7 +39,7 @@
       </cp-example>
 
       <div
-        class="cp-result-examples-list-wrapper-load-more"
+        class="cp-result-examples-list-wrapper-show-more"
       >
         <p
           ng-click="getSongExamples( chordProg.progression, $event, pageNumber ); isPreviousExamplesButtonActive = true"
@@ -42,7 +48,7 @@
         </p>
       </div>
       <div
-        class="cp-result-examples-list-wrapper-load-more"
+        class="cp-result-examples-list-wrapper-show-previous"
       >
         <p
           ng-click="getPreviousSongExamples( chordProg.progression, $event, pageNumber )"

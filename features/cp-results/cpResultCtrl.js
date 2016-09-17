@@ -1,5 +1,5 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'cpResultCtrl', function( $scope, resultsService, userService ) {
+    .controller( 'cpResultCtrl', function( $scope, $location, $anchorScroll, resultsService, userService ) {
         $scope.isDropdownBoxActive = false;
         $scope.pageNumber = 2;
         $scope.isPreviousExamplesButtonActive = false;

@@ -8,10 +8,34 @@ angular.module( 'perfectChordsApp' )
                   chordProg: '='
               }
             , controller: 'cpResultCtrl'
-            , link: function( scope, element, attributes ) {
+            , link: function( scope, elem, attr ) {
                 scope.toggleDropdownBox = function() {
                   scope.isDropdownBoxActive = !scope.isDropdownBoxActive;
                 };
+
+                elem.on( 'click', function() {
+                  elem[ 0 ].scrollIntoView();
+                } );
+
+                var examplesListWrapper = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ) );
+
+                var nextButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-more' ) );
+                var prevButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-previous' ) );
+
+                nextButton.on( 'click', function() {
+                  elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
+                  elem[ 0 ].scrollIntoView();
+                } );
+
+                prevButton.on( 'click', function() {
+                  elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
+                  elem[ 0 ].scrollIntoView();
+                } );
+
+                // var myDiv = document.getElementById('containerDiv');
+                // myDiv.innerHTML = variableLongText;
+                // myDiv.scrollTop = 0;
+
             }
     }
   } );
