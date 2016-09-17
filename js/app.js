@@ -1,4 +1,5 @@
-angular.module( 'perfectChordsApp', [ 'ui.router'] )
+
+angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular)] )
 
     .config( function( $stateProvider, $urlRouterProvider ) {
 

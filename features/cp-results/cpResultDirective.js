@@ -13,7 +13,7 @@ angular.module( 'perfectChordsApp' )
                   scope.isDropdownBoxActive = !scope.isDropdownBoxActive;
                 };
 
-                elem.on( 'click', function() {
+                elem.find( 'h3' ).on( 'click', function() {
                   elem[ 0 ].scrollIntoView();
                 } );
 
@@ -31,10 +31,6 @@ angular.module( 'perfectChordsApp' )
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
                   elem[ 0 ].scrollIntoView();
                 } );
-
-                // var myDiv = document.getElementById('containerDiv');
-                // myDiv.innerHTML = variableLongText;
-                // myDiv.scrollTop = 0;
 
             }
     }

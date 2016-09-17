@@ -204,6 +204,10 @@ body {
   align-items: center;
 }
 
+.song-builder-master-wrapper-heading {
+  text-align: center;
+}
+
 .song-builder-master-wrapper {
   height: 40em;
   padding: 0 5em;
@@ -211,20 +215,27 @@ body {
 }
 
 .song-builder-drag-and-drop-wrapper {
-  display: flex;
-  justify-content: space-around;
+  /*display: flex;
+  justify-content: space-around;*/
+  width: 100%;
+}
+
+.song-builder-drag-and-drop-wrapper-row-1,
+.song-builder-drag-and-drop-wrapper-row-2 {
+  width: 100%;
 }
 
 .song-builder-section-wrapper {
-  width: 15em;
-  height: 15em;
-  border: 2px solid gainsboro;
+  margin: 0;
+  padding: 0;
+  min-height: 2em;
+  /*border: 2px solid gainsboro;*/
   text-align: center;
 }
 
-.song-builder-all-results-wrapper {
-  height: 40em;
+.song-builder-all-favorites-wrapper {
   padding: 0 5em;
+  height: 40em;
   overflow: scroll;
 }
 
