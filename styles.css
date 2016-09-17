@@ -56,23 +56,45 @@ body {
   text-align: center;
 }
 
-
-
 .cp-all-results-wrapper {
   height: 40em;
   padding: 0 5em;
   overflow: scroll;
 }
 
+.cp-all-results-header {
+  text-align: center;
+}
+
+.cp-all-results-search-form {
+  height: 2.7em;
+  width: 20em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cp-all-results-search {
+  width: 20em;
+  height: 2.7em;
+  font-size: 0.8em;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .cp-result-display-bar-wrapper {
+  padding-right: 2em;
   border-bottom: 2px solid black;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .cp-result-plus-text-wrapper {
   height: 2em;
   width: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .cp-result-plus-text:hover {
@@ -165,7 +187,7 @@ body {
 
 .hooktheory-website-wrapper, iframe {
   height: 60vh;
-  width: 60vh;
+  width: 100%;
 }
 
 .save-song-structure-button {
@@ -277,6 +299,7 @@ body {
 }
 
 .song-builder-prog-example-song-info {
+  width: 100%;
   margin-left: 0.3em;
   font-size: 0.9em;
   overflow: scroll;
@@ -298,7 +321,7 @@ body {
 }
 
 .song-builder-example-wrapper {
-  padding: 0.5em;
+  padding: 0.5em 0.5em 0.7em 0em;
   border-bottom: 1px solid black;
   width: 100%;
   display: inline-block;
@@ -330,6 +353,7 @@ body {
 }
 
 .song-builder-example-song-info {
+  width: 100%;
   margin-left: 0.3em;
   font-size: 1em;
   overflow: scroll;

@@ -9,11 +9,21 @@
 
 <main class="cp-all-results-wrapper">
 
-  <h2>Select a chord progression to hear real-world examples.</h2>
+  <h2 class="cp-all-results-header">Select a chord progression to hear real-world examples.</h2>
+
+  <form class="cp-all-results-search-form">
+    <input
+      class="cp-all-results-search"
+      ng-model="chordFilterText"
+      placeholder="Filter progressions by chord"
+      type="text"
+    >
+  </form>
+
 
   <cp-result
     class="cp-result-master-wrapper"
-    ng-repeat="chordProg in chordProgDatabase"
+    ng-repeat="chordProg in chordProgDatabase | filter: chordFilterText"
     chord-prog="chordProg"
   >
   </cp-result>
