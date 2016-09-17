@@ -6,9 +6,7 @@
     CHORDS
   </h1>
 </nav>
-
-<main class="cp-all-results-wrapper">
-
+<nav class="cp-all-results-filter-nav">
   <h2 class="cp-all-results-header">Select a chord progression to hear real-world examples.</h2>
 
   <form class="cp-all-results-search-form">
@@ -19,16 +17,13 @@
       type="text"
     >
   </form>
+</nav>
+<main class="cp-all-results-wrapper">
 
 
-  <cp-result
-    class="cp-result-master-wrapper"
-    ng-repeat="chordProg in chordProgDatabase | filter: chordFilterText"
-    chord-prog="chordProg"
-  >
-  </cp-result>
 
-  </div>
+
+  <ui-view></ui-view>
 
 
 </main>

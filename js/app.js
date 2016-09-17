@@ -15,6 +15,12 @@ angular.module( 'perfectChordsApp', [ 'ui.router'] )
                 , templateUrl: './features/cp-results/cp-results-tmpl.html'
                 , controller: 'cpResultsCtrl'
             } )
+            .state( 'cp-results-view', {
+                url: '/cp-results-view'
+                , parent: 'cp-results'
+                , templateUrl: './features/cp-results/cp-results-view-tmpl.html'
+                , controller: 'cpResultsCtrl'
+            } )
             .state( 'song-builder', {
                 url: '/song-builder'
                 , templateUrl: './features/song-builder/song-builder-tmpl.html'

@@ -56,10 +56,18 @@ body {
   text-align: center;
 }
 
+.home-page-get-started-button:hover {
+  cursor: pointer;
+}
+
 .cp-all-results-wrapper {
-  height: 40em;
+  height: 33em;
   padding: 0 5em;
   overflow: scroll;
+}
+
+.cp-all-results-filter-nav {
+
 }
 
 .cp-all-results-header {
