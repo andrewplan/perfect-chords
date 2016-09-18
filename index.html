@@ -51,6 +51,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-dragula/1.2.8/angular-dragula.js" charset="utf-8"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDWTUMttbcbrb7UpKr1OnuGIekLCLDJOe4",
+      authDomain: "perfect-chords.firebaseapp.com",
+      databaseURL: "https://perfect-chords.firebaseio.com",
+      storageBucket: "perfect-chords.appspot.com",
+      messagingSenderId: "346280681911"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
   <script src="./js/app.js" charset="utf-8"></script>
   <script src="./js/mainCtrl.js" charset="utf-8"></script>
   <script src="./features/home-page/homePageCtrl.js" charset="utf-8"></script>
