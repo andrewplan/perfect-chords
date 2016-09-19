@@ -1,16 +1,16 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat';
 
+html {
+  height: 100vh;
+  width: 100%;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
   box-sizing: border-box;
-}
-
-ui-view {
-  height: 100%;
+  height: 100vh;
 }
 
 .top-nav-bar {
@@ -19,7 +19,6 @@ ui-view {
   justify-content: space-between;
   align-items: center;
   background-color: #5CA7D8;
-
 }
 
 .top-nav-bar h1 {
@@ -31,7 +30,7 @@ ui-view {
 }
 
 .home-page-wrapper {
-  min-height: 41em;
+  height: 84vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -67,14 +66,27 @@ ui-view {
   cursor: pointer;
 }
 
+.sign-in-page {
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-out-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cp-all-results-wrapper {
-  height: 32em;
+  height: 72vh;
   padding: 0 5em;
   overflow: scroll;
 }
 
 .cp-all-results-filter-nav {
-
+  height: 6em;
 }
 
 .cp-all-results-header {
@@ -90,7 +102,7 @@ ui-view {
 
 .cp-all-results-search {
   width: 20em;
-  height: 2.7em;
+  height: 2em;
   font-size: 0.8em;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -216,7 +228,6 @@ ui-view {
 }
 
 .song-builder-master-wrapper {
-  height: 40em;
   padding: 0 5em;
   overflow: scroll;
 }
@@ -241,8 +252,8 @@ ui-view {
 }
 
 .song-builder-all-favorites-wrapper {
+  height: 84.1vh;
   padding: 0 5em;
-  height: 40em;
   overflow: scroll;
 }
 
@@ -412,8 +423,9 @@ ui-view {
 }
 
 .bottom-nav-bar {
-  height: 5em;
-  padding-top: 1em;
+  height: 4em;
+  margin-top: 0.5em;
+  padding-top: 1.5em;
   display: flex;
   justify-content: space-around;
   /*background-color: #FFA22C;*/
