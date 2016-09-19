@@ -1,2 +1,2 @@
 # perfect-chords
-https://andrewplan.github.io/perfect-chords/index.html
+https://andrewplan.github.io/perfect-chords
