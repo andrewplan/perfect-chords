@@ -29,7 +29,7 @@ angular.module( 'perfectChordsApp' )
 
                   scope.songInfo.on( 'click', function() {
                       elem.parent().parent().find( 'section' ).html(
-                          '<iframe src="' + scope.example.url + '"' + '></iframe>'
+                          '<iframe src="' + scope.example.url.replace(/http/gi, 'https') + '"' + '></iframe>'
                       );
                   } );
               }

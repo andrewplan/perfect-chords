@@ -1,4 +1,4 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'homePageCtrl', function( $scope, userService ) {
+    .controller( 'homePageCtrl', function( $scope, userService, $state ) {
       
     } )
