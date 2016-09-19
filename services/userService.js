@@ -12,6 +12,7 @@ angular.module( 'perfectChordsApp' )
             user = JSON.parse( localStorage[ 'user' ] );
             currentProgFavorites = JSON.parse( localStorage[ 'current_prog_favorites' ] );
             currentExampleFavorites = JSON.parse( localStorage[ 'current_example_favorites' ] );
+            console.log( 'loaded local storage!' )
         }
 
         this.signOut = function() {
@@ -24,7 +25,7 @@ angular.module( 'perfectChordsApp' )
         this.signInWithEmailAndPassword = function( email, password ) {
           auth.signInWithEmailAndPassword( email, password )
           .catch( function( error ) {
-            console.error( 'Error: ', error );
+              console.error( 'Error: ', error );
           } );
 
           auth.onAuthStateChanged( function( firebaseUser ) {
@@ -34,16 +35,20 @@ angular.module( 'perfectChordsApp' )
             user = firebaseUser;
             $window.localStorage.setItem( 'user', JSON.stringify( user ) );
 
+            console.log( 'successful sign in!', firebaseUser );
+
             firebase.database()
               .ref( 'users/' + uid + '/current_prog_favorites' )
               .once( 'value' )
               .then( function( response ) {
                   currentProgFavorites = [];
-                  var currentProgFavoritesRaw = response.val();
-                  for ( var i = 0; i < currentProgFavoritesRaw.length; i++ ) {
-                      currentProgFavorites.push( angular.fromJson( currentProgFavoritesRaw[ i ] ) )
+                  if ( response.val() ) {
+                    var currentProgFavoritesRaw = response.val();
+                    for ( var i = 0; i < currentProgFavoritesRaw.length; i++ ) {
+                        currentProgFavorites.push( angular.fromJson( currentProgFavoritesRaw[ i ] ) )
+                    }
+                    $window.localStorage.setItem( 'current_prog_favorites', JSON.stringify( currentProgFavorites ) );
                   }
-                  $window.localStorage.setItem( 'current_prog_favorites', JSON.stringify( currentProgFavorites ) );
               } );
 
             firebase.database()
@@ -51,22 +56,23 @@ angular.module( 'perfectChordsApp' )
               .once( 'value' )
               .then( function( response ) {
                   currentExampleFavorites = [];
-                  var currentExampleFavoritesRaw = response.val();
-                  for ( var i = 0; i < currentExampleFavoritesRaw.length; i++ ) {
-                      currentExampleFavorites.push( angular.fromJson( currentExampleFavoritesRaw[ i ] ) )
+                  if ( response.val() ) {
+                    var currentExampleFavoritesRaw = response.val();
+                    for ( var i = 0; i < currentExampleFavoritesRaw.length; i++ ) {
+                        currentExampleFavorites.push( angular.fromJson( currentExampleFavoritesRaw[ i ] ) )
+                    }
+                    $window.localStorage.setItem( 'current_example_favorites', JSON.stringify( currentExampleFavorites ) );
                   }
-                  $window.localStorage.setItem( 'current_example_favorites', JSON.stringify( currentExampleFavorites ) );
               } );
 
-
               $state.go( 'home-page' );
-
+              console.log( user );
           } );
         };
 
         this.userInfo = function() {
           return user;
-        }
+        };
 
         this.updateUserFavorites = function( favoritesArray, favoritesArrayName ) {
             var updatedFavoritesArray = [];

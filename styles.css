@@ -4,11 +4,13 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
 
 ui-view {
-  height: auto;
+  height: 100%;
 }
 
 .top-nav-bar {
@@ -28,12 +30,8 @@ ui-view {
   color: white;
 }
 
-/*.main-ui-view {
-  height: 45em;
-}*/
-
 .home-page-wrapper {
-  height: 41em;
+  min-height: 41em;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -70,7 +68,7 @@ ui-view {
 }
 
 .cp-all-results-wrapper {
-  height: 33em;
+  height: 32em;
   padding: 0 5em;
   overflow: scroll;
 }
