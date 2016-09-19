@@ -36,7 +36,7 @@ body {
 
 .top-nav-bar-sign-out-link:hover {
   color: white;
-  cursor: pointer
+  cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 
