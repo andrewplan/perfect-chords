@@ -1,7 +1,5 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'cpResultsCtrl', function( $scope, resultsService ) {
-
+    .controller( 'cpResultsCtrl', function( $scope, userService, resultsService ) {
         $scope.chordProgDatabase = resultsService.getChordProgDatabase();
         $scope.isDropdownBoxActive = false;
-        /***** code for when Hooktheory API starts working *****/
 } );

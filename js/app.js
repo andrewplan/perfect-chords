@@ -11,6 +11,15 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 , templateUrl: './features/home-page/home-page-tmpl.html'
                 , controller: 'homePageCtrl'
             } )
+            .state( 'sign-in', {
+                url: '/sign-in'
+                , templateUrl: './features/sign-in/sign-in-tmpl.html'
+                , controller: 'signInCtrl'
+            } )
+            .state( 'register', {
+                url: '/register'
+                , templateUrl: './features/register/register-tmpl.html'
+            } )
             .state( 'cp-results', {
                 url: '/cp-results'
                 , templateUrl: './features/cp-results/cp-results-tmpl.html'
@@ -28,4 +37,4 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 , controller: 'songBuilderCtrl'
             } );
 
-    } )
+        } )

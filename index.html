@@ -12,11 +12,15 @@
   <title>Perfect Chords</title>
 </head>
 
-<body ng-controller="mainCtrl">
+<body ng-app="mainCtrl">
+  <top-nav-bar>
+  </top-nav-bar>
 
-  <ui-view></ui-view>
+  <ui-view class="main-ui-view">
+  </ui-view>
 
   <nav class="bottom-nav-bar">
+
     <a
       ui-sref="cp-results-view"
       class="bottom-nav-bar-results-link"
@@ -69,6 +73,8 @@
   <script src="./js/app.js" charset="utf-8"></script>
   <script src="./js/mainCtrl.js" charset="utf-8"></script>
   <script src="./features/home-page/homePageCtrl.js" charset="utf-8"></script>
+  <script src="./features/home-page/topNavBarDirective.js" charset="utf-8"></script>
+  <script src="./features/sign-in/signInCtrl.js" charset="utf-8"></script>
   <script src="./features/cp-results/cpResultsCtrl.js" charset="utf-8"></script>
   <script src="./features/cp-results/cpResultDirective.js" charset="utf-8"></script>
   <script src="./features/cp-results/cpResultCtrl.js" charset="utf-8"></script>

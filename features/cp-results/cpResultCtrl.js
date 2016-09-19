@@ -37,5 +37,6 @@ angular.module( 'perfectChordsApp' )
         $scope.removeProgFromFavorites = function( chordProg, $event ) {
             $event.preventDefault();
             userService.removeProgFromFavorites( chordProg );
+
         };
 } );
