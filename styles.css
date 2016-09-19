@@ -42,6 +42,7 @@ body {
 .home-page-wrapper {
   height: 84vh;
   width: 100%;
+  padding: 0 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,10 +71,17 @@ body {
   font-size: 24px;
   /*text-shadow: 2px 2px 2px black;*/
   text-align: center;
+  box-shadow: 2px 5px 1px #999;
 }
 
 .home-page-get-started-button:hover {
   cursor: pointer;
+  background-color: #ff0000;
+}
+
+.home-page-get-started-button:active {
+  transform: translateY( 4px );
+  box-shadow: 0 1px #666;
 }
 
 .sign-in-page {
@@ -232,6 +240,17 @@ body {
 .cp-result-examples-list-wrapper a {
   text-decoration: none;
   font-size: 0.9em;
+}
+
+.cp-result-examples-list-filter {
+  height: 2em;
+  margin: 0.5em 0 0.5em 0;
+  width: 98%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cp-result-examples-list-filter:focus {
+  outline: none;
 }
 
 .cp-result-example-wrapper {

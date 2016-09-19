@@ -29,11 +29,15 @@
     <div
       class="cp-result-examples-list-wrapper"
     >
-      <span>
-      </span>
+      <input
+        class="cp-result-examples-list-filter"
+        ng-model="exampleFilterText"
+        placeholder="Filter examples"
+        type="text"
+      >
       <cp-example
         class="cp-result-example-wrapper"
-        ng-repeat="example in examples"
+        ng-repeat="example in examples | filter: exampleFilterText"
         example="example"
       >
       </cp-example>
