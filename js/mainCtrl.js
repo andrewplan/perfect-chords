@@ -1,4 +1,4 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'mainCtrl', function( $scope, $firebaseAuth, $state, userService ) {
-        
+    .controller( 'mainCtrl', function( $scope, userService ) {
+      
     } )

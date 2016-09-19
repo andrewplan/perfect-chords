@@ -15,27 +15,36 @@ angular.module( 'perfectChordsApp' )
             console.log( 'loaded local storage!' )
         }
 
+        this.clearLocalStorage = function() {
+          localStorage[ 'uid' ] = '';
+          localStorage[ 'user' ] = '';
+          localStorage[ 'current_prog_favorites' ] = '';
+          localStorage[ 'current_example_favorites' ] = '';
+        };
+
         this.signOut = function() {
-          auth.signOut()
+          firebase.auth().signOut()
+            .then( function() {
+              console.log( 'Signed out' );
+              user = '';
+            } )
             .catch( function( error ) {
               console.log( 'Error: ', error );
             } );
         };
 
         this.signInWithEmailAndPassword = function( email, password ) {
-          auth.signInWithEmailAndPassword( email, password )
+          firebase.auth().signInWithEmailAndPassword( email, password )
           .catch( function( error ) {
               console.error( 'Error: ', error );
           } );
 
-          auth.onAuthStateChanged( function( firebaseUser ) {
+          firebase.auth().onAuthStateChanged( function( firebaseUser ) {
             uid = auth.currentUser.uid;
             $window.localStorage.setItem( 'uid', JSON.stringify( uid ) );
 
             user = firebaseUser;
             $window.localStorage.setItem( 'user', JSON.stringify( user ) );
-
-            console.log( 'successful sign in!', firebaseUser );
 
             firebase.database()
               .ref( 'users/' + uid + '/current_prog_favorites' )
@@ -65,8 +74,7 @@ angular.module( 'perfectChordsApp' )
                   }
               } );
 
-              $state.go( 'home-page' );
-              console.log( user );
+              $state.go( 'cp-results-view' );
           } );
         };
 

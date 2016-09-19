@@ -1,3 +1,9 @@
+<top-nav-bar
+  firebase-user="firebaseUser"
+  type="general"
+>
+</top-nav-bar>
+
 <!-- <section class="song-builder-master-wrapper">
 
   <h1 class="song-builder-master-wrapper-heading">SONG BUILDER</h1>
@@ -38,48 +44,50 @@
 
   </div> -->
 
-  <section class="song-builder-all-favorites-wrapper">
+<section class="song-builder-all-favorites-wrapper">
 
-    <div
-      class="song-builder-favorite-progs-wrapper"
-      dragula=" 'bag-one' "
-      dragula-model='prog'
+  <div
+    class="song-builder-favorite-progs-wrapper"
+    dragula=" 'bag-one' "
+    dragula-model='prog'
+  >
+
+    <h2 class="song-builder-favorite-progs-wrapper-heading">FAVORITE PROGRESSIONS</h2>
+
+    <song-builder-prog
+      ng-repeat="prog in progFavorites"
+      prog="prog"
     >
+    </song-builder-prog>
 
-      <h2 class="song-builder-favorite-progs-wrapper-heading">FAVORITE PROGRESSIONS</h2>
+  </div>
 
-      <song-builder-prog
-        ng-repeat="prog in progFavorites"
-        prog="prog"
-      >
-      </song-builder-prog>
+  <div
+    class="song-builder-favorite-examples-wrapper"
+    dragula=" 'bag-two' "
+    dragula-model='prog'
+  >
 
-    </div>
+    <h2 class="song-builder-favorite-examples-wrapper-heading">FAVORITE EXAMPLES</h2>
 
-    <div
-      class="song-builder-favorite-examples-wrapper"
-      dragula=" 'bag-two' "
-      dragula-model='prog'
+    <song-builder-example
+      ng-repeat="example in exampleFavorites"
+      example="example"
     >
+    </song-builder-example>
 
-      <h2 class="song-builder-favorite-examples-wrapper-heading">FAVORITE EXAMPLES</h2>
+    <!-- <div
+      class="song-builder-favorite-example"
+      ng-repeat="example in exampleFavorites"
+    >
+      <p class="song-builder-favorite-example-text">{{example.song}}</p>
+    </div> -->
 
-      <song-builder-example
-        ng-repeat="example in exampleFavorites"
-        example="example"
-      >
-      </song-builder-example>
-
-      <!-- <div
-        class="song-builder-favorite-example"
-        ng-repeat="example in exampleFavorites"
-      >
-        <p class="song-builder-favorite-example-text">{{example.song}}</p>
-      </div> -->
-
-    </div>
-
-  </section>
-
+  </div>
 
 </section>
+
+<bottom-nav-bar
+  type='general'
+>
+</bottom-nav-bar>

@@ -14,45 +14,8 @@
 
 <body ng-app="mainCtrl">
 
-  <top-nav-bar
-    firebase-user="firebaseUser"
-  >
-  </top-nav-bar>
-
   <ui-view class="main-ui-view">
   </ui-view>
-
-  <nav class="bottom-nav-bar">
-
-    <a
-      ui-sref="cp-results-view"
-      class="bottom-nav-bar-results-link"
-    >
-      Results
-    </a>
-    <a
-      ui-sref="song-builder"
-      class="bottom-nav-bar-song-builder-link"
-    >
-      My Favorites
-    </a>
-    <!-- <a
-      ui-sref="home-page"
-      class="bottom-nav-bar-my-songs-link"
-    >
-      My Songs
-    </a> -->
-    <p class="hooktheory-credit-wrapper">
-      Data from
-      <a
-        href="http://hooktheory.com"
-        class="hooktheory-link"
-      >
-        Hooktheory
-      </a>
-      API
-    </p>
-  </nav>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
@@ -76,7 +39,8 @@
   <script src="./js/app.js" charset="utf-8"></script>
   <script src="./js/mainCtrl.js" charset="utf-8"></script>
   <script src="./features/home-page/homePageCtrl.js" charset="utf-8"></script>
-  <script src="./features/home-page/topNavBarDirective.js" charset="utf-8"></script>
+  <script src="./features/top-nav-bar/topNavBarDirective.js" charset="utf-8"></script>
+  <script src="./features/bottom-nav-bar/bottomNavBarDirective.js" charset="utf-8"></script>
   <script src="./features/sign-in/signInCtrl.js" charset="utf-8"></script>
   <script src="./features/cp-results/cpResultsCtrl.js" charset="utf-8"></script>
   <script src="./features/cp-results/cpResultDirective.js" charset="utf-8"></script>
