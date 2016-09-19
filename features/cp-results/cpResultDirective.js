@@ -24,12 +24,12 @@ angular.module( 'perfectChordsApp' )
 
                 nextButton.on( 'click', function() {
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
-                  elem[ 0 ].scrollIntoView();
+                  elem[ 0 ].scrollIntoView( { behavior: 'smooth' } );
                 } );
 
                 prevButton.on( 'click', function() {
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
-                  elem[ 0 ].scrollIntoView();
+                  elem[ 0 ].scrollIntoView( { behavior: 'smooth' } );
                 } );
 
             }

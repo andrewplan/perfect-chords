@@ -15,7 +15,15 @@
   <div
     ng-show="firebaseUser"
   >
-    {{ firebaseUser.email }}
-    | <span ng-click="signOut()">Sign Out</span>
+    <span class="top-nav-bar-email-display">
+      {{ firebaseUser.email }}
+    </span>
+    |
+    <span
+      class="top-nav-bar-sign-out-link"
+      ng-click="signOut()"
+    >
+      Sign Out
+    </span>
   </div>
 </nav>
