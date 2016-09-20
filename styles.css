@@ -174,7 +174,7 @@ body {
 }
 
 .cp-all-results-wrapper {
-  height: 85%;
+  height: 83%;
   padding: 0 5em;
   overflow: scroll;
 }
@@ -554,8 +554,8 @@ body {
 
 .bottom-nav-bar {
   /*height: 4em;*/
-  margin-top: 0.5em;
-  padding-top: 1.5em;
+  /*margin-top: 0.5em;
+  padding-top: 1.5em;*/
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -570,10 +570,6 @@ body {
   text-decoration: none;
   letter-spacing: 2px;
   color: #5CA7D8;
-}
-
-.bottom-nav-bar p {
-  margin: 0;
 }
 
 .hooktheory-link, .hooktheory-link:visited  {
