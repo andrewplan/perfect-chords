@@ -553,12 +553,13 @@ body {
 }
 
 .bottom-nav-bar {
-  height: 4em;
+  /*height: 4em;*/
   margin-top: 0.5em;
   padding-top: 1.5em;
   display: flex;
   justify-content: space-around;
-  overflow: hidden;
+  align-items: center;
+  /*overflow: hidden;*/
   /*background-color: #FFA22C;*/
 }
 
