@@ -19,6 +19,7 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
             .state( 'register', {
                 url: '/register'
                 , templateUrl: './features/register/register-tmpl.html'
+                , controller: 'registerCtrl'
             } )
             .state( 'sign-out', {
                 url: '/sign-out'

@@ -26,7 +26,8 @@ body {
 }
 
 .top-nav-bar-perfect-heading-text,
-.sign-in-page-perfect-heading-text {
+.sign-in-page-perfect-heading-text,
+.register-page-perfect-heading-text {
   color: white;
 }
 
@@ -89,19 +90,22 @@ body {
 
 }
 
-.sign-in-page {
+.sign-in-page,
+.register-page {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.sign-in-page-form-heading {
+.sign-in-page-form-heading,
+.register-page-form-heading {
   margin-top: 0;
   letter-spacing: 1px;
 }
 
-.sign-in-page-form-wrapper {
+.sign-in-page-form-wrapper,
+.register-page-form-wrapper {
   height: 30em;
   width: 28em;
   display: flex;
@@ -111,15 +115,19 @@ body {
   background-color: #4B9ED4;
 }
 
+
 .sign-in-page-email-input,
-.sign-in-page-password-input {
+.sign-in-page-password-input,
+.register-page-email-input,
+.register-page-password-input {
   height: 3em;
   width: 27.8em;
   margin-bottom: 2em;
   font-family: 'Montserrat', sans-serif;
 }
 
-.sign-in-page-form-sign-in-button {
+.sign-in-page-form-sign-in-button,
+.register-page-form-register-button {
   margin-top: 2em;
   padding: 0.5em;
   border: 1.5px solid white;
@@ -128,14 +136,21 @@ body {
   letter-spacing: 1.5px;
 }
 
-.sign-in-page-form-sign-in-button:hover {
+.sign-in-page-form-sign-in-button:hover,
+.register-page-form-register-button:hover  {
   cursor: pointer;
   background-color: #6bb6e7;
   transition: all 0.2s ease 0s;
 }
 
-.sign-in-page-form-sign-in-button:active {
+.sign-in-page-form-sign-in-button:active,
+.register-page-form-register-button:active {
   background-color: #277eb6;
+}
+
+.register-page-go-to-sign-in-link-wrapper,
+.sign-in-page-create-account-link-wrapper {
+  margin-top: 1em;
 }
 
 .sign-out-page {
@@ -149,17 +164,23 @@ body {
   letter-spacing: 1px;
 }
 
+.cp-all-results-view-wrapper {
+  height: 84vh;
+}
+
+.cp-all-results-filter-nav {
+  height: 12%;
+  padding: 1em;
+}
+
 .cp-all-results-wrapper {
-  height: 72vh;
+  height: 85%;
   padding: 0 5em;
   overflow: scroll;
 }
 
-.cp-all-results-filter-nav {
-  height: 6em;
-}
-
 .cp-all-results-header {
+  margin-top: 0;
   text-align: center;
 }
 
@@ -258,6 +279,12 @@ body {
   outline: none;
 }
 
+.cp-result-examples-list-wrapper-show-more-examples:hover,
+.cp-result-examples-list-wrapper-show-previous-examples:hover {
+  color: #5CA7D8;
+  cursor: pointer;
+}
+
 .cp-result-example-wrapper {
   padding: 0.5em;
   border-bottom: 1px solid black;
@@ -349,7 +376,7 @@ body {
 }
 
 .song-builder-all-favorites-wrapper {
-  height: 84.1vh;
+  height: 84vh;
   padding: 0 5em;
   overflow: scroll;
 }
@@ -526,11 +553,13 @@ body {
 }
 
 .bottom-nav-bar {
-  height: 4em;
+  /*height: 4em;*/
   margin-top: 0.5em;
   padding-top: 1.5em;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  /*overflow: hidden;*/
   /*background-color: #FFA22C;*/
 }
 

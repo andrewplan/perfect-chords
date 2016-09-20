@@ -4,25 +4,26 @@
 >
 </top-nav-bar>
 
-<nav class="cp-all-results-filter-nav">
-  <h2 class="cp-all-results-header">Select a chord progression to hear real-world examples.</h2>
+<div class="cp-all-results-view-wrapper">
 
-  <form class="cp-all-results-search-form">
-    <input
-      class="cp-all-results-search"
-      ng-model="chordFilterText"
-      placeholder="Filter progressions by chord"
-      type="text"
-    >
-  </form>
-</nav>
+  <nav class="cp-all-results-filter-nav">
+    <h2 class="cp-all-results-header">Select a chord progression to hear real-world examples.</h2>
 
-<main class="cp-all-results-wrapper">
+    <form class="cp-all-results-search-form">
+      <input
+        class="cp-all-results-search"
+        ng-model="chordFilterText"
+        placeholder="Filter progressions by chord"
+        type="text"
+      >
+    </form>
+  </nav>
 
-  <ui-view></ui-view>
+  <main class="cp-all-results-wrapper">
+    <ui-view></ui-view>
+  </main>
 
-
-</main>
+</div>
 
 <bottom-nav-bar
   type='general'
