@@ -1,8 +1,50 @@
-<h1>Create a Perfect Chords account</h1>
+<main class="register-page">
 
-<input type="text" placeholder="Email" ng-model="email">
-<input type="text" placeholder="Password" ng-model="password">
-
-<button>Sign Up</button>
-
-<p>Already have an account? <span ui-sref="sign-in">Log in here.</span></p>
+  <div class="register-page-form-wrapper">
+    <form class="register-page-form">
+      <h1
+        class="register-page-form-heading"
+        ui-sref="home-page"
+      >
+        <span
+          class="register-page-perfect-heading-text"
+        >
+          PERFECT
+        </span>
+          CHORDS
+      </h1>
+      <input
+        class="register-page-email-input"
+        ng-model="email"
+        type="text"
+        placeholder="Email"
+      >
+      <br/>
+      <input
+        class="register-page-password-input"
+        ng-model="password"
+        placeholder="Password"
+        type="password"
+      >
+      <br/>
+      <div
+        class="register-page-form-register-button"
+        ng-click="createAccount( email, password )"
+      >
+        Register
+      </div>
+      <div class="register-page-go-to-sign-in-link-wrapper">
+        <span>
+          Already have an account?
+          <a
+            class="register-page-go-to-sign-in-link"
+            href=""
+            ui-sref="sign-in"
+          >
+            Sign in here
+          </a>
+        </span>
+      </div>
+    </form>
+  </div>
+</main>

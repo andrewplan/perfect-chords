@@ -33,10 +33,21 @@ angular.module( 'perfectChordsApp' )
             } );
         };
 
+        this.createUserWithEmailAndPassword = function( email, password ) {
+          firebase.auth().createUserWithEmailAndPassword( email, password )
+            .then( function() {
+              $state.go( 'sign-in' );
+            } )
+            .catch( function( error ) {
+              console.log( 'Error: ', error );
+              alert( 'Please enter a valid email address.' );
+            } );
+        }
+
         this.signInWithEmailAndPassword = function( email, password ) {
           firebase.auth().signInWithEmailAndPassword( email, password )
           .catch( function( error ) {
-              console.error( 'Error: ', error );
+              console.log( 'Error: ', error );
           } );
 
           firebase.auth().onAuthStateChanged( function( firebaseUser ) {
