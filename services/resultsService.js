@@ -49,4 +49,21 @@ angular.module( 'perfectChordsApp' )
         this.getChordProgDatabase = function() {
           return chordProgDatabase;
         };
+
+        // this.getChordProgDatabase = function() {
+        //   return firebase.database()
+        //     .ref()
+        //     .child( 'chord_prog_database' )
+        //     .once( 'value' )
+        //     .then( function( snapshot ) {
+        //       var chordProgDatabaseObj = snapshot.val();
+        //       console.log( chordProgDatabaseObj );
+        //       for( var i = 0; i < chordProgDatabaseObj.length; i++ ) {
+        //         chordProgDatabaseArray.push( angular.fromJson( chordProgDatabaseObj[ i ] ) );
+        //       }
+        //       console.log( chordProgDatabaseArray );
+        //       return chordProgDatabaseArray;
+        //     } );
+        //
+        // };
     } )

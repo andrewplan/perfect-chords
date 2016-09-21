@@ -8,20 +8,7 @@ angular.module( 'perfectChordsApp' )
             , scope: {
                   example: '='
               }
-            , controller: function( $scope, userService ) {
-                  $scope.addExampleToFavorites = function( example, progName, $event ) {
-                      $event.preventDefault();
-                      userService.addExampleToFavorites(
-                        {
-                          'song': example.song
-                          , 'artist': example.artist
-                          , 'section': example.section
-                          , 'url': example.url
-                          , 'progression': progName
-                        }
-                      )
-                  }
-              }
+            , controller: 'cpExampleCtrl'
             , link: function( scope, elem, attr ) {
                   scope.progName = elem.parent().parent().parent().find( 'h3' ).text().replace(' ', '');
 

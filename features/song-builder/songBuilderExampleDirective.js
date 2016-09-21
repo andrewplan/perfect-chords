@@ -7,7 +7,7 @@ angular.module( 'perfectChordsApp' )
             , scope: {
                   example: '='
               }
-            , controller: 'songBuilderExampleCtrl'
+            , controller: 'cpExampleCtrl'
             , link: function( scope, elem, attr ) {
                 scope.songInfo = angular.element( elem[ 0 ].querySelector( '.song-builder-example-song-info') );
 

@@ -1,11 +1,19 @@
 angular.module( 'perfectChordsApp' )
     .directive( 'cpResult', function() {
         return {
-            templateUrl: './features/cp-results/cp-result-directive-tmpl.html'
+            templateUrl: function( elem, attr ) {
+              if ( attr.type === 'cp-results' ) {
+                return './features/cp-results/cp-result-directive-tmpl.html'
+              }
+              else if ( attr.type === 'favorites' ) {
+                return './features/song-builder/song-builder-prog-directive-tmpl.html'
+              }
+            }
             , restrict: 'EA'
             , replace: true
             , scope: {
                   chordProg: '='
+                  , prog: '='
               }
             , controller: 'cpResultCtrl'
             , link: function( scope, elem, attr ) {

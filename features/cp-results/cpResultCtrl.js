@@ -2,7 +2,7 @@ angular.module( 'perfectChordsApp' )
     .controller( 'cpResultCtrl', function( $scope, $location, $anchorScroll, resultsService, userService ) {
         $scope.isDropdownBoxActive = false;
         $scope.pageNumber = 2;
-        $scope.isPreviousExamplesButtonActive = false;
+        $scope.isDropdownBoxActive = false;
 
         $scope.getSongExamples = function( chordProg, $event, pageNumber ) {
           $event.preventDefault();
@@ -37,6 +37,5 @@ angular.module( 'perfectChordsApp' )
         $scope.removeProgFromFavorites = function( chordProg, $event ) {
             $event.preventDefault();
             userService.removeProgFromFavorites( chordProg );
-
         };
 } );

@@ -28,13 +28,13 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
             .state( 'cp-results', {
                 url: '/cp-results'
                 , templateUrl: './features/cp-results/cp-results-tmpl.html'
-                , controller: 'cpResultsCtrl'
+                , controller: 'cpResultsViewCtrl'
             } )
             .state( 'cp-results-view', {
                 url: '/cp-results-view'
                 , parent: 'cp-results'
                 , templateUrl: './features/cp-results/cp-results-view-tmpl.html'
-                , controller: 'cpResultsCtrl'
+                , controller: 'cpResultsViewCtrl'
             } )
             .state( 'song-builder', {
                 url: '/song-builder'
