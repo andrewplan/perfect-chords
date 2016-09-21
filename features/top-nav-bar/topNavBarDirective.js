@@ -8,6 +8,6 @@ angular.module( 'perfectChordsApp' )
       , scope: {
           firebaseUser: '='
         }
-      , controller: 'signInCtrl'
-      }
+      , controller: 'userCtrl'
+    }
   } );

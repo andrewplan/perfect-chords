@@ -14,12 +14,12 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
             .state( 'sign-in', {
                 url: '/sign-in'
                 , templateUrl: './features/sign-in/sign-in-tmpl.html'
-                , controller: 'signInCtrl'
+                , controller: 'userCtrl'
             } )
             .state( 'register', {
                 url: '/register'
                 , templateUrl: './features/register/register-tmpl.html'
-                , controller: 'registerCtrl'
+                , controller: 'userCtrl'
             } )
             .state( 'sign-out', {
                 url: '/sign-out'
