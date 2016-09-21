@@ -24,9 +24,14 @@
   >
 
     <div class="song-builder-prog-examples-list-wrapper">
-
+      <input
+        class="cp-result-examples-list-filter"
+        ng-model="exampleFilterText"
+        placeholder="Filter examples"
+        type="text"
+      >
       <cp-example
-        ng-repeat="example in examples"
+        ng-repeat="example in examples | filter: exampleFilterText"
         example="example"
         type="nested-example"
       >
