@@ -1,7 +1,7 @@
 angular.module( 'perfectChordsApp' )
     .directive( 'cpResult', function() {
         return {
-            templateUrl: function( elem, attr ) {
+            templateUrl: ( elem, attr ) => {
               if ( attr.type === 'cp-results' ) {
                 return './features/cp-results/cp-result-directive-tmpl.html'
               }
@@ -16,7 +16,7 @@ angular.module( 'perfectChordsApp' )
                   , prog: '='
               }
             , controller: 'cpResultCtrl'
-            , link: function( scope, elem, attr ) {
+            , link: ( scope, elem, attr ) => {
                 scope.toggleDropdownBox = function() {
                   scope.isDropdownBoxActive = !scope.isDropdownBoxActive;
                 };
@@ -25,17 +25,17 @@ angular.module( 'perfectChordsApp' )
                   elem[ 0 ].scrollIntoView();
                 } );
 
-                var examplesListWrapper = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ) );
+                const examplesListWrapper = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ) );
 
-                var nextButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-more' ) );
-                var prevButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-previous' ) );
+                const nextButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-more' ) );
+                const prevButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-previous' ) );
 
-                nextButton.on( 'click', function() {
+                nextButton.on( 'click', () => {
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
                   elem[ 0 ].scrollIntoView( { behavior: 'smooth' } );
                 } );
 
-                prevButton.on( 'click', function() {
+                prevButton.on( 'click', () => {
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
                   elem[ 0 ].scrollIntoView( { behavior: 'smooth' } );
                 } );

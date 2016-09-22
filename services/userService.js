@@ -1,56 +1,55 @@
 angular.module( 'perfectChordsApp' )
     .service( 'userService', function( $state, $window ) {
 
-        var currentProgFavorites = [];
-        var currentExampleFavorites = [];
-        var user;
-        var uid;
-        var auth = firebase.auth();
+        let currentProgFavorites = [];
+        let currentExampleFavorites = [];
+        let user;
+        let uid;
+        let auth = firebase.auth();
 
         if ( localStorage[ 'uid' ] && localStorage[ 'user' ] && localStorage[ 'current_prog_favorites' ] && localStorage[ 'current_example_favorites' ] ) {
             uid = JSON.parse( localStorage[ 'uid' ] );
             user = JSON.parse( localStorage[ 'user' ] );
             currentProgFavorites = JSON.parse( localStorage[ 'current_prog_favorites' ] );
             currentExampleFavorites = JSON.parse( localStorage[ 'current_example_favorites' ] );
-            console.log( 'loaded local storage!' )
         }
 
-        this.clearLocalStorage = function() {
+        this.clearLocalStorage = () => {
           localStorage[ 'uid' ] = '';
           localStorage[ 'user' ] = '';
           localStorage[ 'current_prog_favorites' ] = '';
           localStorage[ 'current_example_favorites' ] = '';
         };
 
-        this.signOut = function() {
+        this.signOut = () => {
           firebase.auth().signOut()
-            .then( function() {
+            .then( () => {
               console.log( 'Signed out' );
               user = '';
             } )
-            .catch( function( error ) {
+            .catch( ( error ) => {
               console.log( 'Error: ', error );
             } );
         };
 
-        this.createUserWithEmailAndPassword = function( email, password ) {
+        this.createUserWithEmailAndPassword = ( email, password ) => {
           firebase.auth().createUserWithEmailAndPassword( email, password )
-            .then( function() {
+            .then( () => {
               $state.go( 'sign-in' );
             } )
-            .catch( function( error ) {
+            .catch( ( error ) => {
               console.log( 'Error: ', error );
               alert( 'Please enter a valid email address.' );
             } );
         }
 
-        this.signInWithEmailAndPassword = function( email, password ) {
+        this.signInWithEmailAndPassword = ( email, password ) => {
           firebase.auth().signInWithEmailAndPassword( email, password )
-          .catch( function( error ) {
+          .catch( ( error ) => {
               console.log( 'Error: ', error );
           } );
 
-          firebase.auth().onAuthStateChanged( function( firebaseUser ) {
+          firebase.auth().onAuthStateChanged( ( firebaseUser ) => {
             uid = auth.currentUser.uid;
             $window.localStorage.setItem( 'uid', JSON.stringify( uid ) );
 
@@ -60,11 +59,11 @@ angular.module( 'perfectChordsApp' )
             firebase.database()
               .ref( 'users/' + uid + '/current_prog_favorites' )
               .once( 'value' )
-              .then( function( response ) {
+              .then( ( response ) => {
                   currentProgFavorites = [];
                   if ( response.val() ) {
-                    var currentProgFavoritesRaw = response.val();
-                    for ( var i = 0; i < currentProgFavoritesRaw.length; i++ ) {
+                    let currentProgFavoritesRaw = response.val();
+                    for ( let i = 0; i < currentProgFavoritesRaw.length; i++ ) {
                         currentProgFavorites.push( angular.fromJson( currentProgFavoritesRaw[ i ] ) )
                     }
                     $window.localStorage.setItem( 'current_prog_favorites', JSON.stringify( currentProgFavorites ) );
@@ -74,11 +73,11 @@ angular.module( 'perfectChordsApp' )
             firebase.database()
               .ref( 'users/' + uid + '/current_example_favorites' )
               .once( 'value' )
-              .then( function( response ) {
+              .then( ( response ) => {
                   currentExampleFavorites = [];
                   if ( response.val() ) {
-                    var currentExampleFavoritesRaw = response.val();
-                    for ( var i = 0; i < currentExampleFavoritesRaw.length; i++ ) {
+                    let currentExampleFavoritesRaw = response.val();
+                    for ( let i = 0; i < currentExampleFavoritesRaw.length; i++ ) {
                         currentExampleFavorites.push( angular.fromJson( currentExampleFavoritesRaw[ i ] ) )
                     }
                     $window.localStorage.setItem( 'current_example_favorites', JSON.stringify( currentExampleFavorites ) );
@@ -89,13 +88,11 @@ angular.module( 'perfectChordsApp' )
           } );
         };
 
-        this.userInfo = function() {
-          return user;
-        };
+        this.userInfo = () => { return user; };
 
-        this.updateUserFavorites = function( favoritesArray, favoritesArrayName ) {
-            var updatedFavoritesArray = [];
-            for ( var i = 0; i < favoritesArray.length; i++ ) {
+        this.updateUserFavorites = ( favoritesArray, favoritesArrayName ) => {
+            let updatedFavoritesArray = [];
+            for ( let i = 0; i < favoritesArray.length; i++ ) {
               updatedFavoritesArray.push( angular.toJson( favoritesArray[ i ] ) ) ;
             }
 
@@ -112,11 +109,11 @@ angular.module( 'perfectChordsApp' )
         };
 
 
-        this.getProgFavorites = function() {
+        this.getProgFavorites = () => {
           return currentProgFavorites;
         };
 
-        this.addProgToFavorites = function( chordProg ) {
+        this.addProgToFavorites = ( chordProg ) => {
           if ( !currentProgFavorites ) {
             currentProgFavorites = [];
           }
@@ -127,8 +124,8 @@ angular.module( 'perfectChordsApp' )
           this.updateUserFavorites( currentProgFavorites, 'current_prog_favorites');
         };
 
-        this.removeProgFromFavorites = function( chordProg ) {
-          for ( var i = currentProgFavorites.length - 1; i >= 0; i-- ) {
+        this.removeProgFromFavorites = ( chordProg ) => {
+          for ( let i = currentProgFavorites.length - 1; i >= 0; i-- ) {
             if ( currentProgFavorites[ i ] === chordProg ) {
               currentProgFavorites.splice( i, 1 );
             }
@@ -138,12 +135,10 @@ angular.module( 'perfectChordsApp' )
 
         /********EXAMPLE***********/
 
-        this.getExampleFavorites = function() {
-          return currentExampleFavorites;
-        };
+        this.getExampleFavorites = () => { return currentExampleFavorites; };
 
 
-        this.addExampleToFavorites = function( example ) {
+        this.addExampleToFavorites = ( example ) => {
           if ( !currentExampleFavorites ) {
             currentExampleFavorites = [];
           }
@@ -154,8 +149,8 @@ angular.module( 'perfectChordsApp' )
           this.updateUserFavorites( currentExampleFavorites, 'current_example_favorites');
         };
 
-        this.removeExampleFromFavorites = function( example ) {
-          for ( var i = currentExampleFavorites.length - 1; i >= 0; i-- ) {
+        this.removeExampleFromFavorites = ( example ) => {
+          for ( let i = currentExampleFavorites.length - 1; i >= 0; i-- ) {
             if ( currentExampleFavorites[ i ] === example ) {
               currentExampleFavorites.splice( i, 1 );
               this.updateUserFavorites( currentExampleFavorites, 'current_example_favorites');

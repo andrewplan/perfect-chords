@@ -3,7 +3,7 @@ angular.module( 'perfectChordsApp' )
         $scope.isDropdownBoxActive = false;
         $scope.pageNumber = 2;
 
-        $scope.getSongExamples = function( chordProg, $event, pageNumber ) {
+        $scope.getSongExamples = ( chordProg, $event, pageNumber ) => {
           $event.preventDefault();
           resultsService
             .getSongExamples( chordProg, pageNumber )
@@ -13,7 +13,7 @@ angular.module( 'perfectChordsApp' )
             } );
         };
 
-        $scope.getPreviousSongExamples = function( chordProg, $event, pageNumber ) {
+        $scope.getPreviousSongExamples = ( chordProg, $event, pageNumber ) => {
           $event.preventDefault();
           if ( $scope.pageNumber >= 2 ) {
             $scope.pageNumber--;
@@ -23,22 +23,22 @@ angular.module( 'perfectChordsApp' )
           }
           resultsService
             .getSongExamples( chordProg, pageNumber )
-            .then( function( results ) {
+            .then( ( results ) => {
                 $scope.examples = results;
             } );
         };
 
-        $scope.addProgToFavorites = function( chordProg, $event ) {
+        $scope.addProgToFavorites = ( chordProg, $event ) => {
             $event.preventDefault();
             userService.addProgToFavorites( chordProg );
         };
 
-        $scope.removeProgFromFavorites = function( chordProg, $event ) {
+        $scope.removeProgFromFavorites = ( chordProg, $event ) => {
             $event.preventDefault();
             userService.removeProgFromFavorites( chordProg );
         };
 
-        $scope.addExampleToFavorites = function( example, progName, $event ) {
+        $scope.addExampleToFavorites = ( example, progName, $event ) => {
             $event.preventDefault();
             userService.addExampleToFavorites(
               {
@@ -52,7 +52,7 @@ angular.module( 'perfectChordsApp' )
             );
         };
 
-        $scope.removeExampleFromFavorites = function( example, $event ) {
+        $scope.removeExampleFromFavorites = ( example, $event ) => {
           $event.preventDefault();
           userService.removeExampleFromFavorites( example );
         };

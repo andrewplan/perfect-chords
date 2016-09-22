@@ -36,6 +36,10 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 , templateUrl: './features/cp-results/cp-results-view-tmpl.html'
                 , controller: 'cpResultsViewCtrl'
             } )
+            .state( 'next-chord-finder', {
+                url: '/next-chord-finder'
+                , templateUrl: './features/next-chord-finder/next-chord-finder-view-tmpl.html'
+            } )
             .state( 'song-builder', {
                 url: '/song-builder'
                 , templateUrl: './features/song-builder/song-builder-tmpl.html'

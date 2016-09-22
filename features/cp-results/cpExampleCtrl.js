@@ -2,7 +2,7 @@ angular.module( 'perfectChordsApp' )
     .controller( 'cpExampleCtrl', function( $scope, userService ) {
           $scope.isDropdownBoxActive = false;
 
-          $scope.addExampleToFavorites = function( example, progName, $event ) {
+          $scope.addExampleToFavorites = ( example, progName, $event ) => {
               $event.preventDefault();
               userService.addExampleToFavorites(
                 {
@@ -16,7 +16,7 @@ angular.module( 'perfectChordsApp' )
               );
           };
 
-          $scope.removeExampleFromFavorites = function( example, $event ) {
+          $scope.removeExampleFromFavorites = ( example, $event ) => {
             $event.preventDefault();
             userService.removeExampleFromFavorites( example );
           };
