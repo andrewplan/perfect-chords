@@ -14,9 +14,9 @@
       class="cp-result-text-wrapper"
     >
       <h3
+        ng-bind-html="chordProg.progression_HTML"
         ng-click="getSongExamples( chordProg.child_path, $event ); toggleDropdownBox()"
       >
-        {{ chordProg.child_path }}
       </h3>
     </div>
 

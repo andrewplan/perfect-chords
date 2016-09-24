@@ -12,15 +12,18 @@
     placeholder="Your current chord progression"
     type="text"
   >
-  <input
+  <button
     type="submit"
-    ng-click="getChordProgressions( userChordProg )"
-    value="Discover"
+    ng-click="getChordProgressions()"
   >
-  <span><h2>{{ progressionHTML }}</h2></span>
+    Discover
+  </button>
+  <p>Your current progression:</p>
+  <h2 class="next-chord-finder-progression-display"></h2>
+
   <div class="next-chord-finder-legend-results-wrapper">
     <div>
-       <h3>Legend</h3>
+       <!-- <h3>Legend</h3>
           <p>Formula for basic chords or borrowed chords in the relative Major key</p>
               <ul>
                 <li>simple-chord = [mode], numeral, [inversion]</li>
@@ -33,7 +36,7 @@
               <ul>
                 <li>chord = simple-chord | applied-chord</li>
                 <li>progression = chord, {",", chord}</li>
-              </ul>
+              </ul> -->
 
       <!-- <p>Figured bass for triadic and seventh chords</p>
       <p>inversion = "6" | "64" | "7" | "65" | "43" | "42"</p> -->

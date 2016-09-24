@@ -5,20 +5,28 @@ angular.module( 'perfectChordsApp' )
         const chordProbPath = 'trends/nodes?cp='
         const songExamplesPath = 'trends/songs?cp='
         let chordProgDatabase = $firebaseArray( firebase.database().ref().child( 'chord_prog_database' ) );
+        let chordProgHTMLArray = [];
+        let chordProgHTML = ''
+        let chordProgArray = [];
+        let chordProgQuery = '';
 
         this.getModes = () => this.modes;
-        // this.getMajorChords = () => this.majorChords;
-        // this.getMinorChords = () => this.minorChords;
-        // this.getDorianChords = () => this.dorianChords;
-        // this.getPhrygianChords = () => this.phrygianChords;
-        // this.getLydianChords = () => this.lydianChords;
-        // this.getMixolydianChords = () => this.mixolydianChords;
-        // this.getLocrianChords = () => this.locrianChords;
 
-        this.getChordProgressions = ( chordProg ) => {
+        this.addToChordProgHTMLArray = ( chordHTML ) => {
+          chordProgHTMLArray.push( chordHTML );
+        }
+
+        this.addToChordProgArray = ( chord ) => {
+          chordProgArray.push( chord );
+        };
+
+        this.getChordProgressions = () => {
+
+            chordProgQuery = chordProgArray.join( ',' );
+            chordProgHTML = chordProgHTMLArray.join( ' - ');
             return $http(
               {
-                'url': baseUrl + chordProbPath + chordProg
+                'url': baseUrl + chordProbPath + chordProgQuery
                 , 'method': "GET"
                 , 'headers': {
                   "authorization": "Bearer 242d9571482d3a77b8f00efb38f9cf50"
@@ -31,6 +39,7 @@ angular.module( 'perfectChordsApp' )
                 if ( response.status === 200 ) {
                     console.log( response )
                     for ( let i = 0; i < response.data.length; i++ ) {
+                      response.data[ i ].progression_HTML = chordProgHTML + ' - ' + response.data[ i ].chord_HTML;
                       response.data[ i ].probability = ( ( response.data[ i ].probability * 100 ).toFixed( 1 ) );
                     }
                     return response.data;
@@ -371,7 +380,7 @@ angular.module( 'perfectChordsApp' )
             , chords: this.lydianChords
           }
           , {
-            name: 'Mixolydian'
+            name: 'Mixo'
             , chords: this.mixolydianChords
           }
           , {

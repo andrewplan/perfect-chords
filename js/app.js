@@ -1,5 +1,5 @@
 
-angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'firebase' ] )
+angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'firebase', 'ngSanitize' ] )
 
     .config( function( $stateProvider, $urlRouterProvider ) {
 

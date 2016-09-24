@@ -3,6 +3,7 @@ angular.module( 'perfectChordsApp' )
         return {
             templateUrl: './features/next-chord-finder/mode-buttons-wrapper-directive-tmpl.html'
             , restrict: 'EA'
+            , controller: 'nextChordFinderCtrl'
             , scope: {
                 mode: '='
             }
