@@ -4,12 +4,14 @@ angular.module( 'perfectChordsApp' )
         $scope.pageNumber = 2;
 
         $scope.getSongExamples = ( chordProg, $event, pageNumber ) => {
+          console.log( chordProg );
           $event.preventDefault();
           resultsService
             .getSongExamples( chordProg, pageNumber )
             .then( function( results ) {
                 $scope.examples = results;
                 $scope.pageNumber++;
+                console.log( $scope.pageNumber );
             } );
         };
 
@@ -25,11 +27,16 @@ angular.module( 'perfectChordsApp' )
             .getSongExamples( chordProg, pageNumber )
             .then( ( results ) => {
                 $scope.examples = results;
+                console.log( $scope.pageNumber );
             } );
         };
 
         $scope.addProgToFavorites = ( chordProg, $event ) => {
             $event.preventDefault();
+            if ( chordProg.hasOwnProperty( 'child_path' ) ) {
+              chordProg.progression = chordProg.child_path;
+              chordProg.prog_html = chordProg.child_path;
+            }
             userService.addProgToFavorites( chordProg );
         };
 

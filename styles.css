@@ -336,6 +336,33 @@ body {
   color: rgb(68,68,68);
 }
 
+.next-chord-finder-all-chord-buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.next-chord-finder-mode-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.next-chord-finder-chord-button-wrapper {
+  outline: 1px solid black;
+  width: 4.5em;
+  height: 3.5em;
+  padding-top: 0.75em;
+  display: inline-block;
+  text-align: center;
+}
+
+.next-chord-finder-chord-button-wrapper:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
 .hooktheory-website-wrapper, iframe {
   height: 60vh;
   width: 100%;

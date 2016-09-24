@@ -39,6 +39,7 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
             .state( 'next-chord-finder', {
                 url: '/next-chord-finder'
                 , templateUrl: './features/next-chord-finder/next-chord-finder-view-tmpl.html'
+                , controller: 'nextChordFinderCtrl'
             } )
             .state( 'song-builder', {
                 url: '/song-builder'

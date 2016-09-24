@@ -8,6 +8,9 @@ angular.module( 'perfectChordsApp' )
               else if ( attr.type === 'favorites' ) {
                 return './features/song-builder/song-builder-prog-directive-tmpl.html'
               }
+              else if ( attr.type === 'next-chord-finder' ) {
+                return './features/next-chord-finder/next-chord-finder-result-directive-tmpl.html'
+              }
             }
             , restrict: 'EA'
             , replace: true
