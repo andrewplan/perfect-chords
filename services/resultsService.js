@@ -6,7 +6,7 @@ angular.module( 'perfectChordsApp' )
         const songExamplesPath = 'trends/songs?cp='
         let chordProgDatabase = $firebaseArray( firebase.database().ref().child( 'chord_prog_database' ) );
         let chordProgHTMLArray = [];
-        let chordProgHTML = ''
+        let chordProgHTML = '';
         let chordProgArray = [];
         let chordProgQuery = '';
 
@@ -18,6 +18,13 @@ angular.module( 'perfectChordsApp' )
 
         this.addToChordProgArray = ( chord ) => {
           chordProgArray.push( chord );
+        };
+
+        this.resetNextChordSearch = () => {
+          chordProgHTMLArray = [];
+          chordProgHTML = '';
+          chordProgArray = [];
+          chordProgQuery = '';
         };
 
         this.getChordProgressions = () => {

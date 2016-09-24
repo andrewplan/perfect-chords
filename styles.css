@@ -13,20 +13,6 @@ body {
   height: 100vh;
 }
 
-/*sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-sup {
-    top: -0.5em;
-}
-sub {
-    bottom: -0.25em;
-}*/
-
 .top-nav-bar {
   padding: 0 2em;
   display: flex;
@@ -350,9 +336,33 @@ sub {
   color: rgb(68,68,68);
 }
 
+.next-chord-finder-progression-display-wrapper {
+  text-align: center;
+}
+
+.next-chord-finder-progression-display-heading,
+.next-chord-finder-progression-display {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.next-chord-finder-search-button-wrapper {
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.next-chord-finder-legend-results-wrapper {
+  padding-top: 1em;
+}
+
 .next-chord-finder-all-chord-buttons-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 

@@ -22,7 +22,6 @@ angular.module( 'perfectChordsApp' )
 
                     resultsService.addToChordProgHTMLArray( scope.chord.chord_html );
                     resultsService.addToChordProgArray( scope.chord.keystrokes );
-
                 } );
 
             }

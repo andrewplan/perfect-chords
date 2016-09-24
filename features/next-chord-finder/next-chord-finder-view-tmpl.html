@@ -6,74 +6,35 @@
 
 <main class="cp-all-results-wrapper">
 
-  <p>Can't figure out the next chord? Type in your current chord progression according to the legend to generate possibilities:</p>
-  <input
-    ng-model="userChordProg"
-    placeholder="Your current chord progression"
-    type="text"
-  >
-  <button
-    type="submit"
-    ng-click="getChordProgressions()"
-  >
-    Discover
-  </button>
-  <p>Your current progression:</p>
-  <h2 class="next-chord-finder-progression-display"></h2>
+  <p>Can't figure out the next chord for your song? Input your current progression and discover the possibilities!</p>
+
+  <div class="next-chord-finder-progression-display-wrapper">
+    <p class="next-chord-finder-progression-display-heading">Your current progression:<span>  </span></p>
+    <h2 class="next-chord-finder-progression-display"></h2>
+  </div>
+
+  <div class="next-chord-finder-search-button-wrapper">
+    <button
+      type="submit"
+      ng-click="getChordProgressions();
+        isChordButtonWrapperActive = false;
+        isClearButtonActive = true"
+      ng-hide="isClearButtonActive"
+    >
+      Discover
+    </button>
+
+    <button
+      ng-click="resetNextChordSearch();
+        isChordButtonWrapperActive = true;
+        isClearButtonActive = false"
+      ng-show="isClearButtonActive"
+    >
+      Clear
+    </button>
+  </div>
 
   <div class="next-chord-finder-legend-results-wrapper">
-    <div>
-       <!-- <h3>Legend</h3>
-          <p>Formula for basic chords or borrowed chords in the relative Major key</p>
-              <ul>
-                <li>simple-chord = [mode], numeral, [inversion]</li>
-              </ul>
-          <p>Formula for applied chords</li>
-              <ul>
-                <li>applied-chord = function, [inversion], "/", numeral</li>
-              </ul>
-          <p>Formula for chord progressions</li>
-              <ul>
-                <li>chord = simple-chord | applied-chord</li>
-                <li>progression = chord, {",", chord}</li>
-              </ul> -->
-
-      <!-- <p>Figured bass for triadic and seventh chords</p>
-      <p>inversion = "6" | "64" | "7" | "65" | "43" | "42"</p> -->
-
-      <!-- <p>Applied</p>
-      <table>
-        <tr>
-          <th>V/</th>
-          <th>IV/</th>
-          <th>vii/</th>
-        </tr>
-        <tr>
-          <td>5/</td>
-          <td>4/</td>
-          <td>7/</td>
-        </tr>
-      </table> -->
-    </div>
-
-    <div class="next-chord-finder-all-chord-buttons-wrapper">
-      <mode-buttons-wrapper
-        mode="mode"
-        ng-repeat="mode in modes"
-      >
-      </mode-buttons-wrapper>
-
-      <div>
-        <div>Inversions</div>
-        <div ng-repeat="inversion in inversions">{{ inversion.content }}</div>
-      </div>
-      <div>
-        <div>Applied chords</div>
-        <div ng-repeat="applied in appliedChords">{{ applied.content }}</div>
-      </div>
-    </div>
-
-
     <cp-result
       class="cp-result-master-wrapper"
       ng-repeat="chordProg in chordProgressions"
@@ -81,9 +42,28 @@
       type="next-chord-finder"
     >
     </cp-result>
+
+    <div
+      class="next-chord-finder-all-chord-buttons-wrapper"
+      ng-if="isChordButtonWrapperActive"
+    >
+      <mode-buttons-wrapper
+        mode="mode"
+        ng-repeat="mode in modes"
+      >
+      </mode-buttons-wrapper>
+
+      <!-- <div>
+        <div>Inversions</div>
+        <div ng-repeat="inversion in inversions">{{ inversion.content }}</div>
+      </div>
+      <div>
+        <div>Applied chords</div>
+        <div ng-repeat="applied in appliedChords">{{ applied.content }}</div>
+      </div> -->
+    </div>
+
   </div>
-
-
 
 </main>
 
