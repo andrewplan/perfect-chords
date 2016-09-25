@@ -1,7 +1,11 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'cpResultCtrl', function( $scope, $location, $anchorScroll, resultsService, userService ) {
+    .controller( 'cpResultCtrl', function( $scope, $state, $location, $anchorScroll, resultsService, userService ) {
         $scope.isDropdownBoxActive = false;
         $scope.pageNumber = 2;
+
+        // $scope.goToNotes = () => {
+        //   $state.go( 'notes', { prog: $scope.prog.prog_html })
+        // }
 
         $scope.getSongExamples = ( chordProg, $event, pageNumber ) => {
           console.log( chordProg );

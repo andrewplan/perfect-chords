@@ -45,6 +45,11 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 url: '/song-builder'
                 , templateUrl: './features/song-builder/song-builder-tmpl.html'
                 , controller: 'songBuilderCtrl'
+            } )
+            .state( 'notes', {
+                url: '/song-builder/notes:prog'
+                , templateUrl: './features/song-builder/song-builder-notes-view-tmpl.html'
+                , controller: 'notesViewCtrl'
             } );
 
         } )

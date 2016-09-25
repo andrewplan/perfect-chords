@@ -19,6 +19,13 @@
   </div>
 
   <div
+    ui-sref="notes( { prog: prog.prog_html } )"
+  >
+    Notes
+    {{ prog.notes }}
+  </div>
+
+  <div
     class="song-builder-prog-dropdown-box-wrapper"
     ng-show="isDropdownBoxActive"
   >
