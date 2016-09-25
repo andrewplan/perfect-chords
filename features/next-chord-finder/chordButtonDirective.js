@@ -12,9 +12,8 @@ angular.module( 'perfectChordsApp' )
                 scope.progressionDisplay = elem.parent().parent().parent().parent().parent().find( 'h2' );
 
                 elem.on( 'click', function() {
-                    console.log( scope.progressionDisplay.text() );
-                    if ( !scope.progressionDisplay.text() ) {
-                      elem.parent().parent().parent().parent().parent().find( 'h2' ).text( scope.chord.chord_html );
+                    if ( scope.progressionDisplay.text() === 'Input your progression and discover the possibilities!' ) {
+                      elem.parent().parent().parent().parent().parent().find( 'h2' ).text( 'Your current progression: ' + scope.chord.chord_html );
                     }
                     else {
                       elem.parent().parent().parent().parent().parent().find( 'h2' ).append( '<span> - </span>' + scope.chord.chord_html );

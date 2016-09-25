@@ -336,15 +336,21 @@ body {
   color: rgb(68,68,68);
 }
 
-.next-chord-finder-progression-display-wrapper {
+.next-chord-finder-instructions-heading {
   text-align: center;
 }
 
-.next-chord-finder-progression-display-heading,
+.next-chord-finder-progression-display-wrapper {
+  height: 3em;
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*padding: 0.5em;*/
+}
+
 .next-chord-finder-progression-display {
   display: inline-block;
-  margin: 0;
-  padding: 0;
 }
 
 .next-chord-finder-search-button-wrapper {
@@ -364,37 +370,49 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  /*border: 1px solid black;*/
 }
 
 .next-chord-finder-mode-wrapper {
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
 
 .next-chord-finder-mode-name-wrapper {
-  outline: 1px solid black;
+  background-color: white;
+  border: 0.5px solid black;
   width: 5.2em;
   height: 4.25em;
-  overflow-wrap: break-word;
-  /*padding-top: 0.75em;*/
-  /*font-size: 0.8em;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.next-chord-finder-chord-button-wrapper {
-  outline: 1px solid black;
-  width: 5.2em;
-  height: 3.5em;
-  padding-top: 0.75em;
+.next-chord-finder-chord-button-outer-wrapper {
+  position: relative;
+  perspective: 1000px;
   display: inline-block;
-  text-align: center;
+}
+
+.next-chord-finder-chord-button-wrapper {
+  background-color: white;
+  border: 0.5px solid black;
+  width: 5.2em;
+  height: 4.25em;
+  /*padding-top: 0.75em;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .next-chord-finder-chord-button-wrapper:hover {
-  background-color: gainsboro;
+  background-color: #ffd72d;
   cursor: pointer;
+  transform: rotateY(360deg);
+  transform-style: preserve-3d;
+  transition: transform 1.4s ease-in-out;
+  /*translateX(10px) translateY(-10px)*/
 }
 
 .hooktheory-website-wrapper, iframe {

@@ -6,35 +6,32 @@
 
 <main class="cp-all-results-wrapper">
 
-  <p>Can't figure out the next chord for your song? Input your current progression and discover the possibilities!</p>
+  <!-- <h3 class="next-chord-finder-instructions-heading">Input your progression and discover the possibilities!</h1> -->
 
   <div class="next-chord-finder-progression-display-wrapper">
-    <p class="next-chord-finder-progression-display-heading">Your current progression:<span>  </span></p>
-    <h2 class="next-chord-finder-progression-display"></h2>
+    <!-- <p class="next-chord-finder-progression-display-heading">Current progression:<span>  </span></p> -->
+    <h2 class="next-chord-finder-progression-display">Input your progression and discover the possibilities!</h2>
   </div>
 
   <div class="next-chord-finder-search-button-wrapper">
     <button
       type="submit"
       ng-click="getChordProgressions();
-        isChordButtonWrapperActive = false;
-        isClearButtonActive = true"
-      ng-hide="isClearButtonActive"
+        isChordButtonWrapperActive = false"
     >
       Discover
     </button>
 
     <button
       ng-click="resetNextChordSearch();
-        isChordButtonWrapperActive = true;
-        isClearButtonActive = false"
-      ng-show="isClearButtonActive"
+        isChordButtonWrapperActive = true"
     >
       Clear
     </button>
   </div>
 
   <div class="next-chord-finder-legend-results-wrapper">
+    
     <cp-result
       class="cp-result-master-wrapper"
       ng-repeat="chordProg in chordProgressions"
