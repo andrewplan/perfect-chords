@@ -4,16 +4,7 @@ angular.module( 'perfectChordsApp' )
 
           $scope.addExampleToFavorites = ( example, progName, $event ) => {
               $event.preventDefault();
-              userService.addExampleToFavorites(
-                {
-                  'song': example.song
-                  , 'artist': example.artist
-                  , 'section': example.section
-                  , 'url': example.url
-                  , 'progression': progName
-                  , 'notes': ''
-                }
-              );
+              userService.addExampleToFavorites( example, progName );
           };
 
           $scope.removeExampleFromFavorites = ( example, $event ) => {

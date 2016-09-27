@@ -20,8 +20,6 @@ angular.module( 'perfectChordsApp' )
               }
             , controller: 'cpExampleCtrl'
             , link: ( scope, elem, attr ) => {
-                  // scope.progName = elem.parent().parent().parent().find( 'h3' ).text().replace(' ', '');
-
                   scope.songInfoResultExample = angular.element( elem[ 0 ].querySelector( '.cp-result-example-song-info' ) );
 
                   scope.songInfoResultExample.on( 'click', () => {

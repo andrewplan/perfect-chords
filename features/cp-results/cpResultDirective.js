@@ -24,6 +24,15 @@ angular.module( 'perfectChordsApp' )
                   scope.isDropdownBoxActive = !scope.isDropdownBoxActive;
                 };
 
+                scope.toggleArrow = () => {
+                  if ( !scope.arrowAnimate ) {
+                      scope.arrowAnimate = 'dropdown-box-active';
+                  }
+                  else {
+                    scope.arrowAnimate = '';
+                  }
+                };
+
                 elem.find( 'h3' ).on( 'click', function() {
                   elem[ 0 ].scrollIntoView();
                 } );
@@ -32,7 +41,7 @@ angular.module( 'perfectChordsApp' )
 
                 const nextButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-more' ) );
                 const prevButton = angular.element( elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper-show-previous' ) );
-
+                const dropdownBoxArrowButton = angular.element( elem[ 0 ].querySelector( '.cp-result-arrow-text' ) );
                 nextButton.on( 'click', () => {
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
                   elem[ 0 ].scrollIntoView( { behavior: 'smooth' } );
@@ -41,6 +50,12 @@ angular.module( 'perfectChordsApp' )
                 prevButton.on( 'click', () => {
                   elem[ 0 ].querySelector( '.cp-result-examples-list-wrapper' ).scrollTop = 0;
                   elem[ 0 ].scrollIntoView( { behavior: 'smooth' } );
+                } );
+
+                dropdownBoxArrowButton.on( 'click', () => {
+                  scope.toggleArrow();
+                  scope.toggleDropdownBox();
+                  scope.pageNumber = 2;
                 } );
 
             }

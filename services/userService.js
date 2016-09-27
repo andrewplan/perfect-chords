@@ -113,6 +113,13 @@ angular.module( 'perfectChordsApp' )
           return currentProgFavorites;
         };
 
+        this.generateFavoriteId = ( favoritesArray ) => {
+          if ( favoritesArray.length > 0 ) {
+            return favoritesArray[ favoritesArray.length - 1 ].id + 1;
+          }
+          return 1;
+        };
+
         this.addProgToFavorites = ( chordProg ) => {
           if ( !currentProgFavorites ) {
             currentProgFavorites = [];
@@ -120,6 +127,15 @@ angular.module( 'perfectChordsApp' )
           if ( currentProgFavorites.indexOf( chordProg ) !== -1 ) {
             return;
           }
+          if ( chordProg.hasOwnProperty( 'child_path' ) ) {
+            chordProg.progression = chordProg.child_path;
+            chordProg.prog_html = chordProg.child_path;
+          }
+
+          chordProg.notes = null;
+          chordProg.id = this.generateFavoriteId( currentProgFavorites );
+
+          console.log( chordProg );
           currentProgFavorites.push( chordProg );
           this.updateUserFavorites( currentProgFavorites, 'current_prog_favorites');
         };
@@ -133,18 +149,33 @@ angular.module( 'perfectChordsApp' )
           this.updateUserFavorites( currentProgFavorites, 'current_prog_favorites');
         };
 
+        this.addNotesToProgFavorite = ( prog ) => {
+          for ( let i = 0; i < currentProgFavorites.length; i++ ) {
+            if ( currentProgFavorites[ i ].id === prog.id ) {
+              currentProgFavorites[ i ].notes = prog.notes;
+              console.log( currentProgFavorites[ i ] );
+            }
+          }
+          this.updateUserFavorites( currentProgFavorites, 'current_prog_favorites');
+        };
+
         /********EXAMPLE***********/
 
         this.getExampleFavorites = () => { return currentExampleFavorites; };
 
-
-        this.addExampleToFavorites = ( example ) => {
+        this.addExampleToFavorites = ( example, progName ) => {
           if ( !currentExampleFavorites ) {
             currentExampleFavorites = [];
           }
           if ( currentExampleFavorites.indexOf( example ) !== -1 ) {
             return;
           }
+
+          example.id = this.generateFavoriteId( currentExampleFavorites );
+          example.progression = progName;
+          example.notes = null;
+
+          console.log( example );
           currentExampleFavorites.push( example );
           this.updateUserFavorites( currentExampleFavorites, 'current_example_favorites');
         };

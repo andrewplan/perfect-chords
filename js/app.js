@@ -1,6 +1,6 @@
 
-angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'firebase', 'ngSanitize' ] )
-
+angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'firebase', 'ngSanitize', 'ngAnimate' ] )
+    .run( ( $animate ) => $animate.enabled( true ) )
     .config( function( $stateProvider, $urlRouterProvider ) {
 
         $urlRouterProvider.otherwise( '/' );
@@ -55,4 +55,4 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 }
             } );
 
-        } )
+    } )

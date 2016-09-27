@@ -1,5 +1,5 @@
 <div
-  class="cp-result-master-wrapper"
+
 >
   <div class="cp-result-display-bar-wrapper">
     <div
@@ -13,11 +13,21 @@
       id="cp-result-text-wrapper-anchor-point"
       class="cp-result-text-wrapper"
     >
-      <h3
-        ng-click="getSongExamples( chordProg.progression, $event ); toggleDropdownBox()"
-      >
+      <h3>
         {{ chordProg.prog_html }}
       </h3>
+    </div>
+
+    <div
+      class="cp-result-arrow-wrapper"
+    >
+      <span
+        class="cp-result-arrow-text"
+        ng-class="arrowAnimate"
+        ng-click="getSongExamples( chordProg.progression, $event )"
+      >
+        ►
+      </span>
     </div>
   </div>
 
@@ -45,19 +55,19 @@
 
       <div
         class="cp-result-examples-list-wrapper-show-more"
+        ng-click="getMoreSongExamples( chordProg.progression, $event, pageNumber ); isPreviousExamplesButtonActive = true"
       >
         <p
           class="cp-result-examples-list-wrapper-show-more-examples"
-          ng-click="getSongExamples( chordProg.progression, $event, pageNumber ); isPreviousExamplesButtonActive = true"
         >
           Show more examples
         </p>
       </div>
       <div
         class="cp-result-examples-list-wrapper-show-previous-examples"
+        ng-click="getPreviousSongExamples( chordProg.progression, $event, pageNumber )"
       >
         <p
-          ng-click="getPreviousSongExamples( chordProg.progression, $event, pageNumber )"
           ng-show="isPreviousExamplesButtonActive"
         >
           Show previous examples

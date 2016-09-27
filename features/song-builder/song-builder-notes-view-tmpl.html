@@ -5,7 +5,20 @@
 </top-nav-bar>
 
 <h1>Notes</h1>
-<textarea name="" id="" cols="30" rows="10" ng-model="prog"></textarea>
+<h2>{{ prog_html }}</h2>
+
+<main>
+  <div></div>
+  <textarea name="" id="" ng-model="notes">
+  </textarea>
+</main>
+<button
+  ng-click="addNotesToProgFavorite()"
+>
+  Save
+</button>
+
+
 <a href="" ui-sref="song-builder">Back</a>
 
 <bottom-nav-bar type="general"></bottom-nav-bar>

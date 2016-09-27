@@ -14,11 +14,13 @@
 
 <body ng-app="mainCtrl">
 
-  <ui-view id="main-ui-view">
-  </ui-view>
+  <div class="ui-view-container">
+    <div class="well" ui-view></div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-dragula/1.2.8/angular-dragula.js" charset="utf-8"></script>
