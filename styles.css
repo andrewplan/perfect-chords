@@ -271,7 +271,7 @@ body {
 .cp-all-results-wrapper {
   height: 83%;
   padding: 0 5em;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .cp-all-results-header {
@@ -446,7 +446,7 @@ body {
 .cp-result-example-song-info {
   margin-left: 0.3em;
   font-size: 0.9em;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 
 .cp-result-example-song-info-artist,
@@ -536,7 +536,7 @@ body {
 .next-chord-finder-all-results-wrapper {
   height: 81%;
   padding: 0 5em;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .next-chord-finder-probability-button-wrapper {
@@ -653,7 +653,7 @@ body {
 
 .song-builder-master-wrapper {
   padding: 0 5em;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .song-builder-drag-and-drop-wrapper {
@@ -678,7 +678,7 @@ body {
 .song-builder-all-favorites-wrapper {
   height: 84vh;
   padding: 0 5em;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .song-builder-prog-display-bar-wrapper {
@@ -740,7 +740,7 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 60vh;
-  overflow: scroll;
+  overflow-y: scroll;
 
   animation-duration: 1s;
   animation-name: slidedown;
@@ -764,14 +764,14 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 60vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .song-builder-prog-examples-list-wrapper {
   display: inline-block;
   height: 60vh;
   width: 25em;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .song-builder-prog-examples-list-wrapper a {
@@ -813,7 +813,7 @@ body {
   width: 100%;
   margin-left: 0.3em;
   font-size: 0.9em;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 
 .song-builder-prog-example-song-info-artist,
@@ -869,7 +869,7 @@ body {
   width: 100%;
   margin-left: 0.3em;
   font-size: 1em;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 
 .song-builder-example-song-info-artist,
@@ -902,7 +902,7 @@ body {
   height: 84vh;
   width: 100%;
   padding: 0 5em;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .song-builder-notes-view-notes-input {
