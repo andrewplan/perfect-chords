@@ -16,13 +16,28 @@
         {{ prog.prog_html }}
       </h3>
     </div>
+
+    <div
+      class="song-builder-prog-arrow-wrapper"
+    >
+      <span
+        class="song-builder-prog-arrow-text"
+        ng-class="arrowAnimate"
+        ng-click="getSongExamples( prog.progression, $event )"
+      >
+        ►
+      </span>
+    </div>
   </div>
 
   <div
+    class="song-builder-notes-wrapper"
     ui-sref="notes( { prog: prog } )"
   >
-    Notes
-    {{ prog.notes }}
+    <p class="song-builder-notes-text">
+      <span ng-hide="prog.notes">Notes</span>
+      <span ng-show="prog.notes">{{ prog.notes }}</span>
+    </p>
   </div>
 
   <div

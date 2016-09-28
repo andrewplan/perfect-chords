@@ -1,45 +1,40 @@
-<top-nav-bar
-  firebase-user="firebaseUser"
-  type="general"
->
-</top-nav-bar>
-
-<main class="cp-all-results-wrapper">
-
-  <!-- <h3 class="next-chord-finder-instructions-heading">Input your progression and discover the possibilities!</h1> -->
+<div class="cp-all-results-view-wrapper">
 
   <div class="next-chord-finder-progression-display-wrapper">
-    <!-- <p class="next-chord-finder-progression-display-heading">Current progression:<span>  </span></p> -->
     <h2 class="next-chord-finder-progression-display">Input your progression and discover the possibilities!</h2>
   </div>
 
   <div class="next-chord-finder-search-button-wrapper">
-    <button
+    <div
+      class="next-chord-finder-discover-button"
       type="submit"
       ng-click="getChordProgressions();
-        isChordButtonWrapperActive = false"
+        isChordButtonWrapperActive = false;
+        isResultFilterActive = true"
     >
-      Discover
-    </button>
+      <span>Discover</span>
+    </div>
 
-    <button
+    <div
+      class="next-chord-finder-clear-button"
       ng-click="resetNextChordSearch();
-        isChordButtonWrapperActive = true"
+        isChordButtonWrapperActive = true;
+        isResultFilterActive = false"
     >
-      Clear
-    </button>
+      <span>Clear</span>
+    </div>
+
+    <input
+      class="next-chord-finder-filter-input"
+      ng-model="chordFilterText"
+      ng-show="isResultFilterActive"
+      placeholder="Filter results"
+      type="text"
+    >
+
   </div>
 
-  <div class="next-chord-finder-legend-results-wrapper">
-
-    <cp-result
-      class="cp-result-master-wrapper"
-      ng-repeat="chordProg in chordProgressions"
-      chord-prog="chordProg"
-      type="next-chord-finder"
-    >
-    </cp-result>
-
+  <div class="next-chord-finder-chord-grid-wrapper">
     <div
       class="next-chord-finder-all-chord-buttons-wrapper"
       ng-if="isChordButtonWrapperActive"
@@ -62,6 +57,37 @@
 
   </div>
 
-</main>
+  <div
+    class="next-chord-finder-all-results-wrapper"
+    ng-show="!isChordButtonWrapperActive"
+  >
+    <div
+      class="next-chord-finder-probability-button-wrapper"
+      ng-init="reverse = false"
+      ng-click="reverse = !reverse;
+        toggleProbArrow()"
+    >
+        <span
+          class="next-chord-finder-probability-button-probability-text"
+        >
+          Probability
+        </span>
+        <div class="next-chord-finder-probability-button-arrow-wrapper">
+          <div
+            class="next-chord-finder-probability-button-arrow"
+            ng-class="probArrowAnimate"
+          >
+             ▲
+          </div>
+        </div>
+    </div>
+    <cp-result
+      class="cp-result-master-wrapper"
+      ng-repeat="chordProg in chordProgressions | filter: chordFilterText | orderBy: probability: reverse"
+      chord-prog="chordProg"
+      type="next-chord-finder"
+    >
+    </cp-result>
+  </div>
 
-<bottom-nav-bar type="general"></bottom-nav-bar>
+</div>

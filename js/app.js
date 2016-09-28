@@ -1,6 +1,6 @@
 
 angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'firebase', 'ngSanitize', 'ngAnimate' ] )
-    .run( ( $animate ) => $animate.enabled( true ) )
+    // .run( ( $animate ) => $animate.enabled( true ) )
     .config( function( $stateProvider, $urlRouterProvider ) {
 
         $urlRouterProvider.otherwise( '/' );
@@ -25,29 +25,31 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 url: '/sign-out'
                 , templateUrl: './features/sign-out/sign-out-tmpl.html'
             } )
+            .state( 'main', {
+                url: '/main'
+                , templateUrl: './features/main/main-tmpl.html'
+            } )
             .state( 'cp-results', {
                 url: '/cp-results'
+                , parent: 'main'
                 , templateUrl: './features/cp-results/cp-results-tmpl.html'
-                , controller: 'cpResultsViewCtrl'
-            } )
-            .state( 'cp-results-view', {
-                url: '/cp-results-view'
-                , parent: 'cp-results'
-                , templateUrl: './features/cp-results/cp-results-view-tmpl.html'
                 , controller: 'cpResultsViewCtrl'
             } )
             .state( 'next-chord-finder', {
                 url: '/next-chord-finder'
+                , parent: 'main'
                 , templateUrl: './features/next-chord-finder/next-chord-finder-view-tmpl.html'
                 , controller: 'nextChordFinderCtrl'
             } )
             .state( 'song-builder', {
                 url: '/song-builder'
+                , parent: 'main'
                 , templateUrl: './features/song-builder/song-builder-tmpl.html'
                 , controller: 'songBuilderCtrl'
             } )
             .state( 'notes', {
                 url: '/song-builder/notes'
+                , parent: 'main'
                 , templateUrl: './features/song-builder/song-builder-notes-view-tmpl.html'
                 , controller: 'notesViewCtrl'
                 , params: {

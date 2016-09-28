@@ -44,7 +44,8 @@ angular.module( 'perfectChordsApp' )
             )
             .then( response => {
                 if ( response.status === 200 ) {
-                    console.log( response )
+                    console.log( response.data );
+                    let resultsArray = []
                     for ( let i = 0; i < response.data.length; i++ ) {
                       if ( chordProgHTML ) {
                         response.data[ i ].progression_HTML = chordProgHTML + ' - ' + response.data[ i ].chord_HTML;
@@ -53,8 +54,9 @@ angular.module( 'perfectChordsApp' )
                         response.data[ i ].progression_HTML = response.data[ i ].chord_HTML;
                       }
                       response.data[ i ].probability = ( ( response.data[ i ].probability * 100 ).toFixed( 1 ) );
+                      resultsArray.push( response.data[ i ] );
                     }
-                    return response.data;
+                    return resultsArray;
                 }
                 else {
                   console.log( 'Error: ', response.error );

@@ -84,7 +84,7 @@ angular.module( 'perfectChordsApp' )
                   }
               } );
 
-              $state.go( 'cp-results-view' );
+              $state.go( 'cp-results' );
           } );
         };
 

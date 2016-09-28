@@ -20,8 +20,20 @@
       </h3>
     </div>
 
-    <div>
-      <p>Probability: {{ chordProg.probability }}%</p>
+    <div class="next-chord-finder-result-probability-text-wrapper">
+      <p>{{ chordProg.probability }}%</p>
+    </div>
+
+    <div
+      class="cp-result-arrow-wrapper"
+    >
+      <span
+        class="cp-result-arrow-text"
+        ng-class="arrowAnimate"
+        ng-click="getSongExamples( chordProg.child_path, $event )"
+      >
+        ►
+      </span>
     </div>
 
   </div>

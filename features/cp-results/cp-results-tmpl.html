@@ -1,9 +1,3 @@
-<top-nav-bar
-  firebase-user="firebaseUser"
-  type="general"
->
-</top-nav-bar>
-
 <div class="cp-all-results-view-wrapper">
 
   <nav class="cp-all-results-filter-nav">
@@ -20,12 +14,13 @@
   </nav>
 
   <main class="cp-all-results-wrapper">
-    <ui-view></ui-view>
+    <cp-result
+      class="cp-result-master-wrapper"
+      ng-repeat="chordProg in chordProgDatabase | filter: chordFilterText"
+      chord-prog="chordProg"
+      type="cp-results"
+    >
+    </cp-result>
   </main>
 
 </div>
-
-<bottom-nav-bar
-  type='general'
->
-</bottom-nav-bar>

@@ -1,24 +1,27 @@
-<top-nav-bar
-  firebase-user=firebaseUser
-  type="general"
->
-</top-nav-bar>
+<div class="song-builder-notes-view-wrapper">
+  <h1>Notes</h1>
+  <h2>{{ prog_html }}</h2>
 
-<h1>Notes</h1>
-<h2>{{ prog_html }}</h2>
-
-<main>
-  <div></div>
-  <textarea name="" id="" ng-model="notes">
+  <textarea
+    ng-model="notes"
+    class="song-builder-notes-view-notes-input"
+  >
   </textarea>
-</main>
-<button
-  ng-click="addNotesToProgFavorite()"
->
-  Save
-</button>
 
+  <div class="song-builder-notes-view-button-wrapper">
+    <div
+      class="song-builder-notes-view-save-button"
+      ng-click="addNotesToProgFavorite()"
+    >
+      <span>Save</span>
+    </div>
 
-<a href="" ui-sref="song-builder">Back</a>
+    <div
+      class="song-builder-notes-view-clear-button"
+      ui-sref="song-builder"
+    >
+      <span>Back</span>
+    </div>
+  </div>
 
-<bottom-nav-bar type="general"></bottom-nav-bar>
+</div>
