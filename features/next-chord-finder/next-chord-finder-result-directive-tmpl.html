@@ -15,7 +15,6 @@
     >
       <h3
         ng-bind-html="chordProg.progression_HTML"
-        ng-click="getSongExamples( chordProg.child_path, $event ); toggleDropdownBox()"
       >
       </h3>
     </div>
@@ -65,7 +64,7 @@
       >
         <p
           class="cp-result-examples-list-wrapper-show-more-examples"
-          ng-click="getSongExamples( chordProg.child_path, $event, pageNumber ); isPreviousExamplesButtonActive = true"
+          ng-click="getMoreSongExamples( chordProg.child_path, $event, pageNumber ); isPreviousExamplesButtonActive = true"
         >
           Show more examples
         </p>

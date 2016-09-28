@@ -10,9 +10,7 @@
     </div>
 
     <div class="song-builder-prog-text-wrapper">
-      <h3
-        ng-click="getSongExamples( prog.progression, $event ); toggleDropdownBox()"
-      >
+      <h3>
         {{ prog.prog_html }}
       </h3>
     </div>
@@ -58,6 +56,27 @@
         type="nested-example"
       >
       </cp-example>
+
+      <div
+        class="cp-result-examples-list-wrapper-show-more"
+      >
+        <p
+          class="cp-result-examples-list-wrapper-show-more-examples"
+          ng-click="getMoreSongExamples( prog.progression, $event, pageNumber ); isPreviousExamplesButtonActive = true"
+        >
+          Show more examples
+        </p>
+      </div>
+      <div
+        class="cp-result-examples-list-wrapper-show-previous-examples"
+      >
+        <p
+          ng-click="getPreviousSongExamples( prog.progression, $event, pageNumber )"
+          ng-show="isPreviousExamplesButtonActive"
+        >
+          Show previous examples
+        </p>
+      </div>
 
     </div>
 
