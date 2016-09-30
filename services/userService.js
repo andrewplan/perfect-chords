@@ -193,4 +193,14 @@ angular.module( 'perfectChordsApp' )
           }
         };
 
+        this.addNotesToExampleFavorite = ( example ) => {
+          for ( let i = 0; i < currentExampleFavorites.length; i++ ) {
+            if ( currentExampleFavorites[ i ].id === example.id ) {
+              currentExampleFavorites[ i ].notes = example.notes;
+              console.log( currentExampleFavorites[ i ] );
+            }
+          }
+          this.updateUserFavorites( currentExampleFavorites, 'current_example_favorites');
+        };
+
     } );

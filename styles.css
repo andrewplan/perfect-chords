@@ -569,7 +569,6 @@ body {
 
 .next-chord-finder-chord-grid-wrapper {
   padding-top: 1em;
-
 }
 
 .next-chord-finder-all-chord-buttons-wrapper {
@@ -577,6 +576,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 45em;
+  margin: 0 auto;
   /*border: 1px solid black;*/
   transition: all 1s ease 0s;
   opacity: 1;
@@ -831,8 +832,12 @@ body {
   color: rgb(68,68,68);
 }
 
+.song-builder-favorite-examples-wrapper {
+  margin-top: 4em;
+}
+
 .song-builder-example-wrapper {
-  padding: 0.5em 0.5em 0.7em 0em;
+  padding: 1em 0.5em 0.7em 0em;
   border-bottom: 1px solid black;
   width: 100%;
   display: inline-block;
@@ -872,6 +877,10 @@ body {
   /*overflow: scroll;*/
 }
 
+.song-builder-example-song-info-progression {
+  margin-top: 0;
+}
+
 .song-builder-example-song-info-artist,
 .song-builder-example-song-info-song,
 .song-builder-example-song-info-section {
@@ -905,10 +914,14 @@ body {
   overflow-y: scroll;
 }
 
+.song-builder-notes-view-example-info {
+  margin-bottom: 1.1em;
+}
+
 .song-builder-notes-view-notes-input {
   height: 20em;
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   font-size: 1em;
   font-family: 'Montserrat', 'sans-serif'
 }

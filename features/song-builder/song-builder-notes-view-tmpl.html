@@ -1,6 +1,15 @@
 <div class="song-builder-notes-view-wrapper">
   <h1>Notes</h1>
-  <h2>{{ prog_html }}</h2>
+  <h2 ng-show="isProgActive">{{ prog_html }}</h2>
+  <div
+    class="song-builder-notes-view-example-info"
+    ng-hide="isProgActive"
+  >
+    <p class="song-builder-example-song-info-progression">{{ example.progression }}</p>
+    <p class="song-builder-example-song-info-artist">{{ example.artist }}</p>
+    <p class="song-builder-example-song-info-song">"{{ example.song }}"</p>
+    <p class="song-builder-example-song-info-section">{{ example.section }}</p>
+  </div>
 
   <textarea
     ng-model="notes"
@@ -11,7 +20,7 @@
   <div class="song-builder-notes-view-button-wrapper">
     <div
       class="song-builder-notes-view-save-button"
-      ng-click="addNotesToProgFavorite()"
+      ng-click="addNotesToFavorite()"
     >
       <span>Save</span>
     </div>

@@ -38,11 +38,6 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 , parent: 'main'
                 , templateUrl: './features/cp-results/cp-results-tmpl.html'
                 , controller: 'cpResultsViewCtrl'
-                // , resolve: {
-                //     firebaseUser( userService ) {
-                //         return userService.userInfo();
-                //     }
-                // }
             } )
             .state( 'next-chord-finder', {
                 url: '/next-chord-finder'
@@ -63,6 +58,7 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
                 , controller: 'notesViewCtrl'
                 , params: {
                     prog: null
+                    , example: null
                 }
             } );
 

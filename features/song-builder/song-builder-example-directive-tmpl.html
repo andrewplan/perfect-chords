@@ -18,7 +18,20 @@
       <p class="song-builder-example-song-info-song">"{{ example.song }}"</p>
       <p class="song-builder-example-song-info-section">{{ example.section }}</p>
     </div>
+
+    <div
+      class="song-builder-notes-wrapper"
+      ui-sref="notes( { example: example } )"
+    >
+      <p class="song-builder-notes-text">
+        <span ng-hide="example.notes">Notes</span>
+        <span ng-show="example.notes">{{ example.notes }}</span>
+      </p>
+    </div>
+    
   </div>
+
+
 
   <div
     class="song-builder-example-dropdown-box-wrapper"
