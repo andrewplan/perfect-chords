@@ -1,6 +1,7 @@
 angular.module( 'perfectChordsApp' )
-    .controller( 'userCtrl', function( $scope, userService, $state ) {
+    .controller( 'userCtrl', function( $scope, $state, userService ) {
         $scope.firebaseUser = userService.userInfo();
+        console.log( $scope.firebaseUser );
 
         $scope.signIn = function( email, password ) {
           userService.signInWithEmailAndPassword( email, password );

@@ -1,7 +1,9 @@
 
 angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'firebase', 'ngSanitize', 'ngAnimate' ] )
     // .run( ( $animate ) => $animate.enabled( true ) )
-    .config( function( $stateProvider, $urlRouterProvider ) {
+    .config( function( $animateProvider, $stateProvider, $urlRouterProvider ) {
+
+        $animateProvider.classNameFilter( /animated/ );
 
         $urlRouterProvider.otherwise( '/' );
 
@@ -28,12 +30,19 @@ angular.module( 'perfectChordsApp', [ 'ui.router', angularDragula(angular), 'fir
             .state( 'main', {
                 url: '/main'
                 , templateUrl: './features/main/main-tmpl.html'
+                , controller: 'userCtrl'
+
             } )
             .state( 'cp-results', {
                 url: '/cp-results'
                 , parent: 'main'
                 , templateUrl: './features/cp-results/cp-results-tmpl.html'
                 , controller: 'cpResultsViewCtrl'
+                // , resolve: {
+                //     firebaseUser( userService ) {
+                //         return userService.userInfo();
+                //     }
+                // }
             } )
             .state( 'next-chord-finder', {
                 url: '/next-chord-finder'

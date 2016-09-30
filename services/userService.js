@@ -7,11 +7,15 @@ angular.module( 'perfectChordsApp' )
         let uid;
         let auth = firebase.auth();
 
-        if ( localStorage[ 'uid' ] && localStorage[ 'user' ] && localStorage[ 'current_prog_favorites' ] && localStorage[ 'current_example_favorites' ] ) {
+        if ( localStorage[ 'uid' ] && localStorage[ 'user' ] ) {
             uid = JSON.parse( localStorage[ 'uid' ] );
             user = JSON.parse( localStorage[ 'user' ] );
-            currentProgFavorites = JSON.parse( localStorage[ 'current_prog_favorites' ] );
-            currentExampleFavorites = JSON.parse( localStorage[ 'current_example_favorites' ] );
+            if ( localStorage[ 'current_prog_favorites' ] ) {
+                currentProgFavorites = JSON.parse( localStorage[ 'current_prog_favorites' ] );
+            }
+            if ( localStorage[ 'current_example_favorites' ] ) {
+                currentExampleFavorites = JSON.parse( localStorage[ 'current_example_favorites' ] );
+            }
         }
 
         this.clearLocalStorage = () => {

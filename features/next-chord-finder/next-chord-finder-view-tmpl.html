@@ -36,7 +36,7 @@
 
   <div class="next-chord-finder-chord-grid-wrapper">
     <div
-      class="next-chord-finder-all-chord-buttons-wrapper"
+      class="next-chord-finder-all-chord-buttons-wrapper animated"
       ng-show="isChordButtonWrapperActive"
     >
       <mode-buttons-wrapper
@@ -58,7 +58,7 @@
   </div>
 
   <div
-    class="next-chord-finder-all-results-wrapper"
+    class="next-chord-finder-all-results-wrapper animated"
     ng-show="!isChordButtonWrapperActive"
   >
     <div
@@ -82,7 +82,7 @@
         </div>
     </div>
     <cp-result
-      class="cp-result-master-wrapper"
+      class="cp-result-master-wrapper animated"
       ng-repeat="chordProg in chordProgressions | filter: chordFilterText | orderBy: probability: reverse"
       chord-prog="chordProg"
       type="next-chord-finder"

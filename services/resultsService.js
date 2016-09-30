@@ -56,6 +56,7 @@ angular.module( 'perfectChordsApp' )
                       response.data[ i ].probability = ( ( response.data[ i ].probability * 100 ).toFixed( 1 ) );
                       resultsArray.push( response.data[ i ] );
                     }
+                    // setTimeout( () => resultsArray, 1000 );
                     return resultsArray;
                 }
                 else {
