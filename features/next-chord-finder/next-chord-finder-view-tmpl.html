@@ -37,7 +37,7 @@
   <div class="next-chord-finder-chord-grid-wrapper">
     <div
       class="next-chord-finder-all-chord-buttons-wrapper animated"
-      ng-show="isChordButtonWrapperActive"
+      ng-if="isChordButtonWrapperActive"
     >
       <mode-buttons-wrapper
         mode="mode"
@@ -59,7 +59,7 @@
 
   <div
     class="next-chord-finder-all-results-wrapper animated"
-    ng-show="!isChordButtonWrapperActive"
+    ng-if="!isChordButtonWrapperActive"
   >
     <div
       class="next-chord-finder-probability-button-wrapper"
